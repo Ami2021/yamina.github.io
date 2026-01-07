@@ -1,81 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Try Me – Oat Crust</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Try Me — Crunchy Oat Crust</title>
+  <meta name="description" content="A clean, naturally sweet crunchy oat crust made with simple ingredients. Order locally." />
+
   <style>
-    body {
-      font-family: Georgia, serif;
-      background: #f7f4ef;
-      color: #3a2f25;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg: #fbf7f2;
+      --card: #ffffff;
+      --ink: #2a241f;
+      --muted: #6f655c;
+      --accent: #8b5e34;
+      --accent2: #d6b48c;
+      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --radius: 18px;
     }
-    header {
-      padding: 40px 20px;
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1000px 500px at 20% 0%, rgba(214,180,140,.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(139,94,52,.12), transparent 55%),
+        var(--bg);
+      line-height:1.4;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
     }
-    p {
-      max-width: 600px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 10px 4px 18px;
     }
-    .card {
-      background: #fff;
-      padding: 30px;
-      margin: 30px auto;
-      max-width: 600px;
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 6px 14px rgba(139,94,52,.25);
+    }
+    .pill{
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(0,0,0,.06);
+      padding: 7px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+      white-space:nowrap;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items:stretch;
+      margin-top: 6px;
+    }
+    @media (max-width: 860px){
+      .hero{ grid-template-columns: 1fr; }
+    }
+
+    .heroCard{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width:240px; height:240px;
+      background: radial-gradient(circle at 30% 30%, rgba(214,180,140,.45), transparent 60%);
+      transform: rotate(15deg);
+      pointer-events:none;
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 15.5px;
+      max-width: 54ch;
+    }
+
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin: 10px 0 18px;
+    }
+    .badge{
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 999px;
+      padding: 8px 11px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,.08);
+      text-decoration:none;
+      font-weight: 650;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .08s ease, box-shadow .08s ease;
+      user-select:none;
     }
-    .cta {
-      font-weight: bold;
-      margin-top: 20px;
+    .btn:active{ transform: translateY(1px); }
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--accent), #a36c3c);
+      color: white;
+      border-color: rgba(0,0,0,.08);
+      box-shadow: 0 14px 26px rgba(139,94,52,.22);
     }
-    footer {
-      margin: 40px 0;
-      font-size: 0.9em;
-      color: #777;
+    .btnGhost{
+      background: rgba(255,255,255,.72);
+      color: var(--ink);
+    }
+    .hint{
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* Photo grid */
+    .photos{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .shot{
+      border-radius: 16px;
+      overflow:hidden;
+      aspect-ratio: 4/5;
+      background: #eee;
+      border: 1px solid rgba(0,0,0,.06);
+      position:relative;
+    }
+    .shot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .cap{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Sections */
+    .sectionRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 860px){
+      .sectionRow{ grid-template-columns: 1fr; }
+    }
+    .mini{
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size: 16px;
+      letter-spacing:-.2px;
+    }
+    .mini p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    li{ margin: 6px 0; }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 12.5px;
+      padding: 10px 0 0;
+    }
+
+    /* Tiny label */
+    .note{
+      display:inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px dashed rgba(0,0,0,.15);
+      padding-top: 10px;
     }
   </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Nourish & Glow Co</span>
+      </div>
+      <div class="pill">Crunchy Oat Crust • Order locally</div>
+    </div>
 
-<header>
-  <h1>Try Me</h1>
-  <p>A clean, naturally sweet oat crust made with simple ingredients.</p>
-</header>
+    <div class="hero">
+      <div class="heroCard">
+        <h1>Try Me</h1>
+        <p class="sub">
+          A clean, naturally sweet <b>crunchy oat crust</b> made with simple ingredients.
+          Fill it with yogurt, top it how you like, and you’ve got a fast breakfast or snack.
+        </p>
 
-<div class="card">
-  <p>
-    Made with rolled oats, peanut butter, coconut oil, maple syrup,
-    chia seeds, flax seeds, and hemp seeds.
-  </p>
+        <div class="badges">
+          <span class="badge">No additives</span>
+          <span class="badge">Made locally</span>
+          <span class="badge">Perfect with yogurt</span>
+        </div>
 
-  <p><strong>How to enjoy:</strong></p>
-  <p>
-    With yogurt • With nut butter or dates •  
-    As a quick breakfast or workout snack
-  </p>
+        <div class="mini" style="margin-top:14px;">
+          <h3>Ingredients</h3>
+          <p>Rolled oats • Peanut butter • Coconut oil • Maple syrup • Chia • Flax • Hemp</p>
 
-  <p class="cta">
-    Made locally • No additives
-  </p>
+          <span class="note">
+            Allergens: contains peanuts. (You can adjust this line any time.)
+          </span>
+        </div>
 
-  <p>
-    Order locally — ask for details
-  </p>
-</div>
+        <div class="mini" style="margin-top:14px;">
+          <h3>How to enjoy</h3>
+          <ul>
+            <li>Fill with yogurt + fruit (or date pieces)</li>
+            <li>Spread nut butter or jam</li>
+            <li>Quick pre/post-workout snack</li>
+          </ul>
+        </div>
 
-<footer>
-  Nourish & Glow Co
-</footer>
+        <!-- CONTACT + ORDER OPTIONS -->
+        <div class="ctaRow" style="margin-top:16px;">
+          <!-- Replace the phone number below with yours -->
+          <a class="btn btnPrimary" href="sms:+17035551234?&body=Hi!%20I%20tried%20your%20oat%20crust%20and%20want%20to%20order.%20What%20do%20you%20have%20available%3F">
+            Text to order
+          </a>
 
+          <!-- Replace the email below with yours -->
+          <a class="btn btnGhost" href="mailto:yourname@email.com?subject=Crust%20Order&body=Hi!%20I%20tried%20your%20oat%20crust%20and%20want%20to%20order.%20What%20do%20you%20have%20available%3F">
+            Email
+          </a>
+        </div>
+
+        <p class="hint">
+          Tip: texting feels more trustworthy than a form when you’re small + local.
+        </p>
+      </div>
+
+      <div class="photos">
+        <div class="grid">
+          <!-- These must match the filenames you upload to the repo -->
+          <div class="shot">
+            <img src="IMG_5933.jpeg" alt="Crunchy oat crust with yogurt and fruit" />
+          </div>
+          <div class="shot">
+            <img src="IMG_5931.jpeg" alt="Crunchy oat crust topped with yogurt and fruit" />
+          </div>
+        </div>
+        <div class="cap">
+          Real photos. Crunchy texture. Best enjoyed filled with yogurt and topped your way.
+        </div>
+
+        <div class="sectionRow">
+          <div class="mini">
+            <h3>Best for</h3>
+            <p>Gyms • busy mornings • snack breaks • light dessert</p>
+          </div>
+          <div class="mini">
+            <h3>Pack options</h3>
+            <p>Single crust (sample) • Pack of 4 (home)</p>
+          </div>
+          <div class="mini">
+            <h3>Local pickup</h3>
+            <p>Loudoun area (you can edit this line)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Nourish & Glow Co • “Order locally” page • Update anytime
+    </footer>
+  </div>
 </body>
 </html>
-
