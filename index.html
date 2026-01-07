@@ -4,305 +4,439 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Nourish & Glow Co. | Oat Crusts</title>
-  <meta name="description" content="Crunchy oat crusts, naturally sweet, made locally. Text to order (202) 569-6873." />
+  <meta name="description" content="Naturally sweet oat crusts. Local pickup/delivery. Text to order (202) 569-6873." />
 
+  <!-- Classic bakery-style fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --beige:#F6F0E8;
-      --pink:#F3E3E8;
-      --sage:#DCE7DD;
-      --blue:#E4EDF7;
+      /* bakery / airy palette */
+      --pink:#f7d9df;
+      --pink2:#fbe9ee;
+      --cream:#fbf7f2;
+      --ink:#2a2623;
+      --muted:#6f665f;
+      --line:rgba(42,38,35,.14);
 
-      --ink:#262321;
-      --muted:#6E655E;
-      --line:rgba(38,35,33,.12);
-
-      --max:1100px;
+      --btn:#d96a7a;       /* classic rose button */
+      --btnHover:#c75869;
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
+    html,body{margin:0; padding:0}
     body{
-      margin:0;
       color:var(--ink);
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        linear-gradient(180deg, var(--beige) 0%, #FBF9F6 38%, var(--beige) 100%);
+      background:var(--cream);
+      font-family:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
     }
 
-    /* subtle color wash (NOT futuristic) */
-    body:before{
-      content:"";
-      position:fixed; inset:0;
-      pointer-events:none;
-      background:
-        radial-gradient(900px 520px at 12% 10%, rgba(243,227,232,.65), transparent 60%),
-        radial-gradient(780px 480px at 88% 14%, rgba(228,237,247,.55), transparent 62%),
-        radial-gradient(820px 520px at 18% 92%, rgba(220,231,221,.55), transparent 62%);
-      opacity:.9;
-    }
-
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 20px 70px; position:relative}
-
-    /* top */
-    header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:6px 0 34px;
-    }
-    .brand{
-      letter-spacing:.2px;
+    /* top bar */
+    .topbar{
+      background:var(--pink2);
+      border-bottom:1px solid var(--line);
       font-size:13px;
-      color:var(--muted);
-      display:flex; gap:10px; align-items:center;
-      text-transform:uppercase;
+      color:rgba(42,38,35,.70);
     }
-    .dot{
-      width:9px; height:9px; border-radius:50%;
-      background:#8B6B55;
-      box-shadow:0 10px 20px rgba(0,0,0,.10);
+    .topbar .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:10px 16px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    nav{display:flex; gap:16px; font-size:13px; color:var(--muted)}
-    nav a{padding-bottom:3px; border-bottom:1px solid transparent}
-    nav a:hover{border-bottom-color:var(--line)}
+    .topbar a{color:inherit; text-decoration:underline; text-underline-offset:3px}
 
-    /* hero */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:34px;
-      align-items:start;
-      padding-bottom:34px;
+    /* header */
+    header{
+      background:var(--pink2);
       border-bottom:1px solid var(--line);
     }
+    .headerWrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
 
-    h1{
-      font-family:"Cormorant Garamond", serif;
+    .logo{
+      display:flex;
+      align-items:baseline;
+      gap:10px;
+      text-decoration:none;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+    .logoMark{
+      width:12px; height:12px; border-radius:50%;
+      background:var(--btn);
+      display:inline-block;
+    }
+    .logoName{
+      font-family:"Playfair Display", serif;
       font-weight:700;
-      font-size: clamp(44px, 5vw, 70px);
-      line-height: .95;
-      margin:0 0 14px;
-      letter-spacing:-.6px;
+      font-size:22px;
+      letter-spacing:.2px;
+    }
+    .logoTag{
+      font-size:12px;
+      color:rgba(42,38,35,.62);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-top:2px;
     }
 
-    .lead{
-      margin:0 0 18px;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:15.5px;
-      max-width: 52ch;
+    nav{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
-
-    .meta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin:18px 0 22px;
+    nav a{
       font-size:13px;
-      color:rgba(38,35,33,.78);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      text-decoration:none;
+      color:rgba(42,38,35,.78);
+      padding:6px 0;
+      border-bottom:1px solid transparent;
     }
-    .tag{
-      padding:8px 12px;
+    nav a:hover{border-bottom-color:rgba(42,38,35,.26)}
+    .iconLink{
+      font-size:18px;
+      text-transform:none;
+      letter-spacing:0;
+      border-bottom:none !important;
+      opacity:.75;
+    }
+
+    /* hero banner */
+    .hero{
+      position:relative;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 16px 0;
+    }
+    .heroBanner{
+      position:relative;
       border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.35);
-      backdrop-filter: blur(6px);
-    }
-
-    .ctaRow{
-      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
-      margin-top:6px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:999px;
-      border:1px solid rgba(38,35,33,.18);
-      background:rgba(255,255,255,.55);
-      font-weight:500;
-      font-size:14px;
-      transition:transform .12s ease, background .12s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.72)}
-    .btnPrimary{
-      background:rgba(243,227,232,.70);
-      border-color:rgba(139,107,85,.35);
-    }
-    .note{font-size:12.5px; color:rgba(38,35,33,.65)}
-
-    /* photos */
-    .photos{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    .img{
-      width:100%;
-      aspect-ratio: 4 / 5;
-      border-radius:18px;
+      background:#fff;
       overflow:hidden;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.28);
+      height:420px;
     }
-    .img img{
+    .heroBanner img{
       width:100%; height:100%;
       object-fit:cover;
       display:block;
+      filter:saturate(1.03) contrast(1.02);
+    }
+    /* soft overlay like real bakery sites */
+    .heroOverlay{
+      position:absolute; inset:0;
+      background:linear-gradient(90deg, rgba(251,247,242,.88) 0%, rgba(251,247,242,.62) 42%, rgba(251,247,242,.15) 72%, rgba(251,247,242,0) 100%);
+    }
+    .heroText{
+      position:absolute;
+      left:46px;
+      top:50%;
+      transform:translateY(-50%);
+      max-width:520px;
+      padding-right:14px;
+    }
+    .heroText h1{
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      font-size:56px;
+      line-height:1.05;
+      margin:0 0 14px;
+      color:var(--btn);
+    }
+    .heroText p{
+      margin:0 0 18px;
+      color:rgba(42,38,35,.78);
+      font-size:16px;
     }
 
-    /* sections (no boxes) */
-    section{padding:28px 0; border-bottom:1px solid var(--line)}
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:28px}
-    h2{
-      font-family:"Cormorant Garamond", serif;
-      font-size:28px;
-      margin:0 0 10px;
-      letter-spacing:-.2px;
+    .btnRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:999px;
+      background:var(--btn);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      letter-spacing:.02em;
     }
-    .text{margin:0; color:var(--muted); line-height:1.75; font-size:14.5px}
-    ul{
-      margin:10px 0 0; padding-left:18px;
-      color:var(--muted);
-      line-height:1.9;
-      font-size:14.5px;
+    .btn:hover{background:var(--btnHover)}
+    .btnGhost{
+      background:transparent;
+      color:rgba(42,38,35,.82);
+      border:1px solid rgba(42,38,35,.22);
+    }
+    .btnGhost:hover{background:rgba(255,255,255,.55)}
+    .smallNote{font-size:13px; color:rgba(42,38,35,.62)}
+
+    /* main content */
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:32px 16px 60px;
     }
 
-    /* order strip (simple, not a “boxy UI”) */
-    .order{
-      border-bottom:none;
-      padding-top:34px;
-    }
-    .orderLine{
-      display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
-      padding-top:14px;
+    .section{
+      padding:34px 0;
       border-top:1px solid var(--line);
     }
-    .orderTitle{
-      margin:0;
-      font-family:"Cormorant Garamond", serif;
-      font-size:26px;
+
+    .grid2{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      align-items:start;
     }
-    .small{margin:6px 0 0; color:rgba(38,35,33,.65); font-size:13px}
+
+    .title{
+      font-family:"Playfair Display", serif;
+      font-size:34px;
+      margin:0 0 12px;
+    }
+    .copy{color:rgba(42,38,35,.76); margin:0}
+
+    /* “miette-like” featured block */
+    .feature{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+      margin-top:10px;
+    }
+    .feature img{
+      width:100%;
+      height:330px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      background:#fff;
+      display:block;
+    }
+
+    .feature h3{
+      font-family:"Playfair Display", serif;
+      color:var(--btn);
+      font-size:30px;
+      margin:0 0 10px;
+    }
+
+    ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:rgba(42,38,35,.74);
+    }
+
+    .orderBar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:18px 0 0;
+    }
 
     footer{
-      padding-top:26px;
-      text-align:center;
-      color:rgba(38,35,33,.55);
-      font-size:12px;
+      border-top:1px solid var(--line);
+      background:var(--pink2);
+      padding:22px 16px;
+      color:rgba(42,38,35,.62);
+      font-size:13px;
+    }
+    footer .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr}
-      .photos{grid-template-columns:1fr 1fr}
+    /* responsive */
+    @media (max-width: 900px){
+      .heroText{left:22px; right:22px; max-width:none}
+      .heroText h1{font-size:44px}
       .grid2{grid-template-columns:1fr}
-      .img{aspect-ratio: 16 / 10}
+      .feature{grid-template-columns:1fr}
+      .feature img{height:280px}
+      .heroBanner{height:380px}
     }
     @media (max-width: 520px){
-      .photos{grid-template-columns:1fr}
-      .img{aspect-ratio: 4 / 5}
+      .heroBanner{height:340px}
+      .heroText h1{font-size:38px}
+      nav{gap:12px}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <span class="dot"></span>
-        <span>Nourish &amp; Glow Co.</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#order">Order</a>
-        <a href="sms:+12025696873">Text</a>
-      </nav>
-    </header>
 
-    <div class="hero">
-      <div>
-        <h1>Crunchy oat<br/>crusts.</h1>
-        <p class="lead">
-          Naturally sweet, clean ingredients, and made in small batches.
-          Fill with yogurt, top with fruit or date pieces, and you’ve got an easy breakfast or snack.
+  <div class="topbar">
+    <div class="wrap">
+      <div>Local pickup / delivery (by arrangement) • Loudoun area</div>
+      <div>Text to order: <a href="sms:+12025696873">(202) 569-6873</a></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="headerWrap">
+      <a class="logo" href="#">
+        <span class="logoMark"></span>
+        <div>
+          <div class="logoName">Nourish &amp; Glow</div>
+          <div class="logoTag">Oat Crusts • Local Orders</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#pickup">Pickup</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#order">Order</a>
+        <a class="iconLink" title="Text" href="sms:+12025696873">✉︎</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="heroBanner">
+      <!-- Upload hero.jpg to your repo -->
+      <img src="hero.jpg" alt="Oat crusts" />
+      <div class="heroOverlay"></div>
+
+      <div class="heroText">
+        <h1>Oat crusts that make healthy eating easy.</h1>
+        <p>
+          Naturally sweet • Crunchy by design • Made in small batches.
+          Fill with yogurt and fruit or date pieces for an easy breakfast or snack.
         </p>
 
-        <div class="meta">
-          <span class="tag">No additives</span>
-          <span class="tag">Made locally</span>
-          <span class="tag">Perfect with yogurt</span>
-        </div>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="sms:+12025696873">Text to order (202) 569-6873</a>
-          <a class="btn" href="#order">How to order</a>
-          <span class="note">Local pickup / local delivery (by arrangement).</span>
-        </div>
-      </div>
-
-      <div class="photos" aria-label="Photos">
-        <div class="img">
-          <img src="IMG_5933.jpeg" alt="Oat crust with yogurt and fruit"
-               onerror="this.alt='Upload IMG_5933.jpeg to the repo root'; this.style.display='none'; this.parentElement.style.display='block'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<div style=&quot;color:#6E655E; font-size:13px; line-height:1.6&quot;>Upload <b>IMG_5933.jpeg</b> to the same folder as <b>index.html</b>.</div>';">
-        </div>
-        <div class="img">
-          <img src="IMG_5931.jpeg" alt="Oat crust with yogurt and toppings"
-               onerror="this.alt='Upload IMG_5931.jpeg to the repo root'; this.style.display='none'; this.parentElement.style.display='block'; this.parentElement.style.padding='18px'; this.parentElement.innerHTML='<div style=&quot;color:#6E655E; font-size:13px; line-height:1.6&quot;>Upload <b>IMG_5931.jpeg</b> to the same folder as <b>index.html</b>.</div>';">
+        <div class="btnRow">
+          <a class="btn" href="sms:+12025696873">Text to order</a>
+          <a class="btn btnGhost" href="#menu">See details</a>
+          <span class="smallNote">No website checkout — we take orders by text.</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <section id="about">
+  <main>
+
+    <section id="menu" class="section">
       <div class="grid2">
         <div>
-          <h2>Ingredients</h2>
-          <p class="text">
-            Rolled oats • Peanut butter • Coconut oil • Maple syrup • Chia • Flax • Hemp • (optional) cinnamon
-            <br/><br/>
+          <h2 class="title">Simple, clean ingredients.</h2>
+          <p class="copy">
+            Rolled oats, peanut butter, coconut oil, maple syrup, chia seeds, flax seeds, hemp seeds.
+            (Optional: cinnamon.)
+            <br><br>
             <b>Allergen:</b> contains peanuts.
           </p>
+
+          <div class="orderBar">
+            <div class="smallNote">Most popular: single sample • pack of 4</div>
+            <a class="btn" href="sms:+12025696873">Text (202) 569-6873</a>
+          </div>
         </div>
+
         <div>
-          <h2>How to enjoy</h2>
+          <h2 class="title">How to enjoy</h2>
           <ul>
             <li>Fill with yogurt + top with fruit (or date pieces)</li>
-            <li>Add nut butter or jam</li>
-            <li>Quick breakfast, snack, or pre/post-workout</li>
+            <li>Add nut butter, honey, or jam</li>
+            <li>Pre / post workout snack</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="order" id="order">
-      <h2 class="orderTitle">Order locally</h2>
-      <p class="text">Text us what you want, quantity, and whether you prefer pickup or delivery.</p>
-
-      <div class="orderLine">
+    <section id="pickup" class="section">
+      <div class="feature">
+        <!-- Upload crust1.jpg to your repo -->
+        <img src="crust1.jpg" alt="Oat crust with fruit" />
         <div>
-          <div class="small">Common options: single sample • pack of 4</div>
-        </div>
-        <div class="ctaRow" style="margin:0">
-          <a class="btn btnPrimary" href="sms:+12025696873">Text (202) 569-6873</a>
+          <h3>Made locally, for local orders.</h3>
+          <p class="copy">
+            We keep it simple: you text us what you want, how many, and when you’d like pickup.
+            If delivery is possible, we’ll confirm by text.
+          </p>
+          <div class="btnRow" style="margin-top:16px">
+            <a class="btn" href="sms:+12025696873">Text to order</a>
+            <a class="btn btnGhost" href="#order">Ordering steps</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      © <span id="y"></span> Nourish &amp; Glow Co.
-    </footer>
-  </div>
+    <section id="delivery" class="section">
+      <div class="grid2">
+        <div>
+          <h2 class="title">Delivery</h2>
+          <p class="copy">
+            Delivery is by arrangement (based on day + location). Text your address area and preferred time,
+            and we’ll confirm availability.
+          </p>
+        </div>
+        <div>
+          <h2 class="title">What to text</h2>
+          <ul>
+            <li>“Hi! I’d like a pack of 4 oat crusts.”</li>
+            <li>Pickup or delivery?</li>
+            <li>Your preferred day/time</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section">
+      <div class="grid2">
+        <div>
+          <h2 class="title">Order by text</h2>
+          <p class="copy">
+            Text <b>(202) 569-6873</b> and we’ll confirm price, pickup/delivery, and timing.
+            No forms, no links, no checkout.
+          </p>
+          <div class="btnRow" style="margin-top:16px">
+            <a class="btn" href="sms:+12025696873">Text (202) 569-6873</a>
+          </div>
+        </div>
+        <div>
+          <h2 class="title">For gyms / offices</h2>
+          <p class="copy">
+            Want samples for your front desk? Text us and we’ll set up a small local drop-off batch with a simple info card.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="y"></span> Nourish &amp; Glow Co.</div>
+      <div>Local orders • Text: <a href="sms:+12025696873">(202) 569-6873</a></div>
+    </div>
+  </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
-
-  
-  
-  
-   
-  
- 
- 
