@@ -4,222 +4,350 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nourish & Glow Co. | Crunchy Oat Crust</title>
-  <meta name="description" content="Crunchy, naturally sweet oat crust shells. Local orders. Text to order." />
+  <meta name="description" content="Crunchy oat crust cups — naturally sweet, clean ingredients. Local orders. Text to order." />
 
   <style>
     :root{
-      --bg:#fbf7f2;
-      --card:#ffffff;
-      --ink:#231f1b;
-      --muted:#6f655c;
-      --line:rgba(0,0,0,.08);
-      --accent:#8b5e34;
-      --accent2:#d6b48c;
-      --shadow:0 14px 34px rgba(0,0,0,.10);
-      --r:18px;
+      /* PALETTE: pale pink + beige + earthy cocoa */
+      --bg: #fbf3f1;          /* blush cream */
+      --bg2:#f7efe6;          /* warm beige */
+      --card: rgba(255,255,255,.82);
+      --solid:#ffffff;
+      --ink: #2a201c;         /* cocoa brown */
+      --muted:#7a6a63;        /* warm taupe */
+      --line: rgba(42,32,28,.10);
+
+      --accent:#d9a1a6;       /* pale rose */
+      --accent2:#e8d2be;      /* beige sand */
+      --accent3:#8a6f63;      /* earthy taupe */
+
+      --shadow: 0 18px 46px rgba(42,32,28,.12);
+      --r: 22px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--ink);
       background:
-        radial-gradient(900px 500px at 18% 0%, rgba(214,180,140,.26), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(139,94,52,.12), transparent 55%),
-        var(--bg);
+        radial-gradient(1200px 620px at 12% -10%, rgba(217,161,166,.42), transparent 60%),
+        radial-gradient(900px 520px at 95% 0%, rgba(232,210,190,.55), transparent 58%),
+        radial-gradient(900px 520px at 90% 95%, rgba(138,111,99,.18), transparent 62%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       line-height:1.45;
     }
-    .wrap{max-width:980px;margin:0 auto;padding:26px 18px 60px}
+
+    .wrap{max-width:1050px;margin:0 auto;padding:22px 18px 70px}
+
+    /* Top bar */
     .top{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:10px 2px 18px;
+      position:sticky;top:0;z-index:9;
+      padding:14px 6px;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(251,243,241,.80), rgba(247,239,230,.35));
+      border-bottom:1px solid rgba(0,0,0,.04);
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
-    .dot{
-      width:12px;height:12px;border-radius:99px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      box-shadow:0 8px 18px rgba(139,94,52,.22);
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;letter-spacing:.2px
     }
-    .pill{
-      font-size:12px;color:var(--muted);
-      background:rgba(255,255,255,.65);
-      border:1px solid var(--line);
-      padding:7px 10px;border-radius:999px;
-      backdrop-filter: blur(6px);
-      white-space:nowrap;
+    .mark{
+      width:14px;height:14px;border-radius:99px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 22px rgba(217,161,166,.22);
+    }
+    .nav{
+      display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:13.5px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{
+      color:var(--ink);
+      background: rgba(255,255,255,.60);
+      border-color: rgba(0,0,0,.05);
     }
 
+    /* Layout */
     .hero{
-      display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      margin-top:18px;
+      align-items:stretch;
     }
-    @media (max-width:880px){.hero{grid-template-columns:1fr}}
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
 
     .card{
-      background:rgba(255,255,255,.75);
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      box-shadow:var(--shadow);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
       overflow:hidden;
+      position:relative;
     }
-    .pad{padding:24px}
+    .pad{padding:26px}
+
+    /* Hero left */
     h1{
       margin:0 0 10px;
-      font-size:clamp(28px,4.2vw,44px);
-      line-height:1.05;
-      letter-spacing:-.7px;
+      font-size: clamp(30px, 4.6vw, 52px);
+      line-height:1.02;
+      letter-spacing:-.9px;
     }
-    .sub{margin:0 0 16px;color:var(--muted);font-size:15.5px;max-width:55ch}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}
-    .badge{
-      background:rgba(255,255,255,.70);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:8px 11px;
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15.8px;
+      max-width: 58ch;
+    }
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
+    .chip{
       font-size:12.5px;
       color:var(--muted);
+      background: rgba(255,255,255,.65);
+      border:1px solid rgba(42,32,28,.08);
+      padding:8px 11px;
+      border-radius:999px;
     }
 
-    .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:12px;
-      border:1px solid var(--line);
-      text-decoration:none;font-weight:750;letter-spacing:.15px;
-      transition:transform .08s ease, box-shadow .08s ease;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(42,32,28,.10);
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.15px;
+      transition: transform .08s ease, box-shadow .12s ease;
       user-select:none;
+      white-space:nowrap;
     }
     .btn:active{transform:translateY(1px)}
     .primary{
-      color:#fff;border-color:rgba(0,0,0,.06);
-      background:linear-gradient(135deg,var(--accent),#a36c3c);
-      box-shadow:0 14px 28px rgba(139,94,52,.22);
+      color:#2a201c;
+      background: linear-gradient(135deg, rgba(217,161,166,.92), rgba(232,210,190,.92));
+      box-shadow: 0 18px 38px rgba(217,161,166,.22);
     }
-    .ghost{background:rgba(255,255,255,.70);color:var(--ink)}
+    .ghost{
+      color:var(--ink);
+      background: rgba(255,255,255,.72);
+    }
+    .tiny{margin-top:10px;color:var(--muted);font-size:12.8px}
 
-    .mini{
-      background:rgba(255,255,255,.70);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      margin-top:12px;
+    /* Hero media (right) */
+    .heroMedia{
+      position:relative;
+      min-height: 440px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+      background:
+        radial-gradient(900px 520px at 20% 10%, rgba(232,210,190,.55), transparent 55%),
+        radial-gradient(700px 520px at 90% 10%, rgba(217,161,166,.30), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.55));
     }
-    .mini h3{margin:0 0 8px;font-size:16px;letter-spacing:-.2px}
-    .mini p{margin:0;color:var(--muted);font-size:13.5px}
-    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
-    li{margin:6px 0}
+    @media (max-width: 900px){ .heroMedia{min-height: 360px;} }
 
-    .photos .grid{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+    .badgeBar{
+      position:absolute;top:16px;left:16px;right:16px;
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;
+      pointer-events:none;
     }
-    @media (max-width:520px){.photos .grid{grid-template-columns:1fr}}
+    .pill{
+      pointer-events:none;
+      font-size:12.5px;
+      color:var(--muted);
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(42,32,28,.08);
+      padding:8px 11px;border-radius:999px;
+      backdrop-filter: blur(10px);
+    }
+
+    .mediaInner{
+      padding:18px;
+      width:100%;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 520px){ .mediaInner{grid-template-columns:1fr;} }
+
     .shot{
-      border-radius:16px;overflow:hidden;aspect-ratio:4/5;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg,#fff,#f2ede6);
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(42,32,28,.10);
+      background: linear-gradient(180deg,#fff,#f3ede6);
+      aspect-ratio: 4/5;
       display:flex;align-items:center;justify-content:center;
       color:var(--muted);font-size:13px;text-align:center;padding:10px;
     }
     .shot img{width:100%;height:100%;object-fit:cover;display:block}
-    .cap{padding:0 18px 18px;color:var(--muted);font-size:13px}
 
-    .row3{
-      display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;
-      padding:0 18px 18px;
+    /* Sections */
+    .grid3{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+      margin-top:16px;
     }
-    @media (max-width:880px){.row3{grid-template-columns:1fr}}
-    .tile{
-      background:rgba(255,255,255,.70);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-    }
-    .tile b{display:block;margin-bottom:6px}
-    .tile span{color:var(--muted);font-size:13px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
 
-    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:12.5px}
-    .tiny{margin-top:10px;color:var(--muted);font-size:12.5px}
+    h2{margin:0 0 10px;font-size:22px;letter-spacing:-.3px}
+    .p{margin:0;color:var(--muted);font-size:13.8px}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:13.8px}
+    li{margin:6px 0}
+
+    .section{margin-top:18px}
+    .split{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .callout{
+      background: rgba(255,255,255,.70);
+      border:1px dashed rgba(42,32,28,.18);
+      border-radius: 18px;
+      padding:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12.5px;
+      padding:14px 0 0;
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <div class="top">
-      <div class="brand"><span class="dot"></span><span>Nourish & Glow Co.</span></div>
-      <div class="pill">Crunchy Oat Crust • Local orders</div>
+      <div class="brand"><span class="mark"></span><span>Nourish & Glow Co.</span></div>
+      <div class="nav">
+        <a href="#what">What it is</a>
+        <a href="#enjoy">How to enjoy</a>
+        <a href="#order">Order</a>
+      </div>
     </div>
 
     <div class="hero">
       <div class="card">
         <div class="pad">
-          <h1>Crunchy oat crusts that make healthy eating easy.</h1>
+          <h1>Crunchy oat crust cups — soft, earthy, and simple.</h1>
           <p class="sub">
-            Naturally sweet, filling, and crunchy by design.
-            Fill with yogurt, top with fruit or date pieces, and you’ve got a fast breakfast or snack.
+            A naturally sweet, clean-ingredient crust that turns yogurt (or nut butter + date pieces) into a full snack in 30 seconds.
+            Crunchy by design.
           </p>
 
-          <div class="badges">
-            <span class="badge">No additives</span>
-            <span class="badge">Made locally</span>
-            <span class="badge">Perfect with yogurt</span>
+          <div class="chips">
+            <span class="chip">No additives</span>
+            <span class="chip">Made locally</span>
+            <span class="chip">Perfect with yogurt</span>
+            <span class="chip">Workout-friendly</span>
           </div>
 
-          <div class="mini">
-            <h3>Ingredients</h3>
-            <p>Rolled oats • Peanut butter • Coconut oil • Maple syrup • Chia • Flax • Hemp • Cinnamon</p>
-            <p class="tiny">Allergens: contains peanuts.</p>
-          </div>
-
-          <div class="mini">
-            <h3>How to enjoy</h3>
-            <ul>
-              <li>Fill with yogurt + fruit (or date pieces)</li>
-              <li>Add nut butter or jam</li>
-              <li>Pre / post-workout snack</li>
-            </ul>
-          </div>
-
-          <div class="cta">
+          <div class="cta" id="order">
             <a class="btn primary" href="sms:+12025696873?&body=Hi!%20I%20tried%20your%20Crunchy%20Oat%20Crust%20and%20want%20to%20order.%20What%20do%20you%20have%20available%3F">
               Text to order (202) 569-6873
             </a>
-            <a class="btn ghost" href="#photos">See photos</a>
+            <a class="btn ghost" href="#enjoy">Serving ideas</a>
           </div>
 
-          <p class="tiny">Local pickup / local delivery. Text for availability.</p>
+          <div class="tiny">
+            Allergens: contains peanuts. Local pickup / local delivery.
+          </div>
         </div>
       </div>
 
-      <div id="photos" class="card photos">
-        <div class="pad" style="padding-bottom:14px">
-          <b style="font-size:16px;">Photos</b>
-          <div class="tiny">Upload your two photos to the repo later, and they’ll appear here automatically.</div>
+      <div class="card heroMedia" id="photos">
+        <div class="badgeBar">
+          <div class="pill">Real photos</div>
+          <div class="pill">Fill • Top • Enjoy</div>
         </div>
 
-        <div class="grid" style="padding:0 18px 12px">
-          <!-- If you haven't uploaded photos yet, these placeholders will show -->
+        <div class="mediaInner">
           <div class="shot">
-            Photo 1 goes here<br>
-            (Upload IMG_5933.jpeg)
+            <img src="IMG_5933.jpeg" alt="Crunchy oat crust with yogurt and fruit"
+                 onerror="this.remove(); this.parentElement.textContent='Upload IMG_5933.jpeg to show photo here';">
           </div>
           <div class="shot">
-            Photo 2 goes here<br>
-            (Upload IMG_5931.jpeg)
+            <img src="IMG_5931.jpeg" alt="Crunchy oat crust topped with yogurt and fruit"
+                 onerror="this.remove(); this.parentElement.textContent='Upload IMG_5931.jpeg to show photo here';">
           </div>
-        </div>
-
-        <div class="cap">
-          Tip: once you upload the images, I’ll switch these placeholders to display them.
-        </div>
-
-        <div class="row3">
-          <div class="tile"><b>Best for</b><span>Gyms • busy mornings • snack breaks • light dessert</span></div>
-          <div class="tile"><b>Pack options</b><span>Single (sample) • Pack of 4 (home)</span></div>
-          <div class="tile"><b>Local</b><span>Loudoun area (edit this line anytime)</span></div>
         </div>
       </div>
     </div>
 
-    <footer>© <span id="y"></span> Nourish & Glow Co.</footer>
+    <div class="grid3 section" id="what">
+      <div class="card"><div class="pad">
+        <h2>What it is</h2>
+        <p class="p">A crunchy oat crust “cup” that you fill with yogurt (or a thick topping), then finish with fruit or date pieces.</p>
+      </div></div>
+
+      <div class="card"><div class="pad">
+        <h2>Ingredients</h2>
+        <p class="p">Rolled oats • Peanut butter • Coconut oil • Maple syrup • Chia • Flax • Hemp • Cinnamon</p>
+        <div class="callout" style="margin-top:12px;">
+          Tip: keep them airtight to protect the crunch.
+        </div>
+      </div></div>
+
+      <div class="card"><div class="pad">
+        <h2>Best for</h2>
+        <ul>
+          <li>Busy mornings</li>
+          <li>Pre / post-workout snack</li>
+          <li>Light “dessert” that feels clean</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="split section" id="enjoy">
+      <div class="card"><div class="pad">
+        <h2>How to enjoy</h2>
+        <ul>
+          <li><b>Classic:</b> Greek yogurt + chopped date pieces</li>
+          <li><b>Fresh:</b> Yogurt + berries (or dried fruit)</li>
+          <li><b>Energy:</b> Nut butter + date pieces</li>
+          <li><b>Dessert vibe:</b> Yogurt + cocoa dust + dates</li>
+        </ul>
+      </div></div>
+
+      <div class="card"><div class="pad">
+        <h2>Ordering</h2>
+        <p class="p">We’re small-batch and local right now — texting is the easiest.</p>
+
+        <div class="cta" style="margin-top:12px">
+          <a class="btn primary" href="sms:+12025696873?&body=Hi!%20I%20want%20to%20order%20Crunchy%20Oat%20Crusts.%20What%20packs%20do%20you%20have%20today%3F">
+            Text to order
+          </a>
+          <a class="btn ghost" href="#photos">View photos</a>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          Suggested text: “Hi! I tried the crust — can I get a pack of 4?”
+        </div>
+      </div></div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Nourish & Glow Co.
+    </footer>
   </div>
 
   <script>
