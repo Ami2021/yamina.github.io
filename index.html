@@ -21,28 +21,29 @@
 --muted: #6F6A65;
 
 }
-    .ribbon{
-  width: 34px;
-  height: 44px;
-  background: linear-gradient(180deg, var(--peach2), var(--peach));
-  margin: 10px auto 0;
-  border-radius: 8px 8px 0 0;
-  clip-path: polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
+.ribbon{
+  width: 36px;
+  height: 52px;
+  margin: 10px auto 12px;
+  background: linear-gradient(180deg, #F2C1B1, #E9A18B);
+  border-radius: 10px 10px 0 0;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
   position: relative;
-  opacity: .9;
+  opacity: .95;
 }
 
 .ribbon::after{
   content:"";
   position:absolute;
   left:50%;
-  top:14px;
+  top:16px;
   transform:translateX(-50%);
-  width:10px;
-  height:10px;
+  width:12px;
+  height:12px;
   border-radius:50%;
-  background: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.80);
 }
+
 
 .with-love{
   margin: 14px 0 0;
