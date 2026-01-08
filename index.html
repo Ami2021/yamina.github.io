@@ -12,16 +12,39 @@
 
   <style>
     :root{
-  --pink:  #F6E6E8;   /* very pale blush pink */
-  --pink2: #F2DADD;   /* soft rose */
-  --ink:   #3F3A36;   /* warm charcoal (text) */
-  --muted:#7A726C;    /* soft warm gray */
-  --accent:#C79A6A;   /* warm bakery beige */
-  --sage:  #C9D8CC;   /* pale sage green */
-  --sky:   #E6EFF4;   /* soft pale blue */
-  --cream:#FBF6F1;    /* warm cream background */
-  --max:1120px;
+  /* Backgrounds */
+  --cream: #FBF7F3;        /* warm off-white */
+  --pink:  #F3E3E6;        /* pale blush pink */
+  --beige: #EFE6DC;        /* soft warm beige */
+
+  /* Accents */
+  --sage:  #8FAF9A;        /* earthy soft green */
+  --sky:   #9DB7CF;        /* muted pale blue */
+  --accent:#C79A6D;        /* warm caramel / oat tone */
+
+  /* Text */
+  --ink:   #2F2C2A;        /* deep soft charcoal */
+  --muted: #6F6A65;        /* secondary text */
+
+  --max: 1120px;
 }
+    .with-love{
+  display:inline-block;
+  margin-top:14px;
+  padding:6px 16px;
+  border-radius:999px;
+  background: linear-gradient(
+    90deg,
+    rgba(143,175,154,.25),
+    rgba(157,183,207,.25)
+  );
+  color: var(--muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  border: 1px solid rgba(143,175,154,.3);
+}
+
 
     }
 
@@ -32,8 +55,14 @@
       color:var(--ink);
       background:var(--cream);
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+   a {
+  color: var(--sage); /* pale green */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sky); /* pale blue */
+}
 
     /* HEADER (flat, like the reference) */
     .topbar{
@@ -241,6 +270,7 @@
             Naturally sweet, filling, and crunchy by design. Fill with yogurt, top with fruit
             (or date pieces), and you’ve got a fast breakfast or snack that actually satisfies.
           </p>
+          <p class="with-love">Made with love 🤍</p>
 
           <div class="highlights">
             <span>No additives</span>
