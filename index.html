@@ -21,28 +21,39 @@
 --muted: #6F6A65;
 
 }
-.ribbon{
+.ribbon {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 36px;
-  height: 52px;
-  margin: 10px auto 12px;
-  background: linear-gradient(180deg, #F2C1B1, #E9A18B);
-  border-radius: 10px 10px 0 0;
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
-  position: relative;
-  opacity: .95;
+  height: 48px;
+  background: linear-gradient(
+    180deg,
+    #F2B8A2,
+    #EFA48E
+  );
+  border-radius: 6px 6px 0 0;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
+  opacity: 0.95;
 }
 
-.ribbon::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:16px;
-  transform:translateX(-50%);
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background: rgba(255,255,255,.80);
+.ribbon::after {
+  content: "♡";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: white;
 }
+
 
 
 .with-love{
@@ -257,14 +268,14 @@ a:hover {
  <header class="topbar">
   <div class="wrap">
     <div class="topbar-inner">
-     <div class="ribbon" aria-hidden="true"></div>
+  <div class="ribbon" aria-hidden="true"></div>
  <h1>SayYesToHealth</h1>
       <p>OAT CRUSTS • LOCAL ORDERS</p>
 
     </div>
   </div>
 </header>
-
+  
       </div>
 
       <nav>
