@@ -28,25 +28,32 @@
 
   --max: 1120px;
 }
-    .with-love{
-  display:inline-block;
-  margin-top:14px;
-  padding:6px 16px;
-  border-radius:999px;
-  background: linear-gradient(
-    90deg,
-    rgba(143,175,154,.25),
-    rgba(157,183,207,.25)
-  );
-  color: var(--muted);
+.with-love{
+  margin: 10px 0 0;
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
-  font-size: 14px;
-  border: 1px solid rgba(143,175,154,.3);
+  font-size: 16px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.with-love::before{
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.12), rgba(0,0,0,0));
+}
 
-    }
+.with-love .heart{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: radial-gradient(circle, rgba(143,175,154,.7), rgba(157,183,207,.6));
+  opacity:.9;
+}
 
     *{box-sizing:border-box}
     body{
@@ -265,12 +272,12 @@ a:hover {
 
         <div>
           <h2>Crunchy oat crusts that make healthy eating easy.</h2>
+<p class="with-love"><span class="heart"></span> Made with love</p>
 
           <p>
             Naturally sweet, filling, and crunchy by design. Fill with yogurt, top with fruit
             (or date pieces), and you’ve got a fast breakfast or snack that actually satisfies.
           </p>
-          <p class="with-love">Made with love 🤍</p>
 
           <div class="highlights">
             <span>No additives</span>
