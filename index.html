@@ -31,6 +31,29 @@
 
   --max:1120px;
 }
+    .ribbon{
+  width: 34px;
+  height: 44px;
+  background: linear-gradient(180deg, var(--peach2), var(--peach));
+  margin: 10px auto 0;
+  border-radius: 8px 8px 0 0;
+  clip-path: polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
+  position: relative;
+  opacity: .9;
+}
+
+.ribbon::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:14px;
+  transform:translateX(-50%);
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: rgba(255,255,255,.75);
+}
+
 .with-love{
   margin: 14px 0 0;
   font-family: "Playfair Display", Georgia, serif;
