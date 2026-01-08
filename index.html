@@ -12,56 +12,63 @@
 
   <style>
     :root{
-  /* Backgrounds */
-  --cream: #FBF7F3;        /* warm off-white */
-  --pink:  #F3E3E6;        /* pale blush pink */
-  --beige: #EFE6DC;        /* soft warm beige */
+  --paper:#FBF6EF;
+  --paper2:#F5ECE2;
 
-  /* Accents */
-  --sage:  #8FAF9A;        /* earthy soft green */
-  --sky:   #9DB7CF;        /* muted pale blue */
-  --accent:#C79A6D;        /* warm caramel / oat tone */
+  --sage:#8FAF9A;
+  --sage2:#BFD3C3;
 
-  /* Text */
-  --ink:   #2F2C2A;        /* deep soft charcoal */
-  --muted: #6F6A65;        /* secondary text */
+  --teal:#4FA7A3;
+  --teal2:#7FC7C2;
 
-  --max: 1120px;
+  --peach:#E9A18B;
+  --peach2:#F2C1B1;
+
+  --paleBlue:#C9D9E6;
+
+  --ink:#2F2C2A;
+  --muted:#6F6A66;
+
+  --max:1120px;
+
 }
 .with-love{
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
-  font-size: 16px;
+  letter-spacing: .02em;
   color: var(--muted);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.with-love::before{
-  content: "";
+.with-love::before,
+.with-love::after{
+  content:"";
   width: 34px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.12), rgba(0,0,0,0));
+  background: linear-gradient(90deg, transparent, rgba(143,175,154,.55), transparent);
 }
 
-.with-love .heart{
-  display:inline-block;
+.with-love .dot{
   width:10px;
   height:10px;
   border-radius:50%;
-  background: radial-gradient(circle, rgba(143,175,154,.7), rgba(157,183,207,.6));
-  opacity:.9;
+  background: radial-gradient(circle, rgba(79,167,163,.35), rgba(233,161,139,.25));
 }
 
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background:var(--cream);
-    }
+   body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(233,161,139,.22), transparent 55%),
+    radial-gradient(900px 500px at 85% 0%, rgba(79,167,163,.16), transparent 55%),
+    radial-gradient(700px 450px at 50% 15%, rgba(143,175,154,.14), transparent 60%),
+    linear-gradient(180deg, var(--paper), var(--paper2));
+}
    a {
   color: var(--sage); /* pale green */
   text-decoration: none;
