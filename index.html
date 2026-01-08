@@ -1,442 +1,448 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Nourish & Glow Co. | Oat Crusts</title>
-  <meta name="description" content="Naturally sweet oat crusts. Local pickup/delivery. Text to order (202) 569-6873." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nourish & Glow Co. | Crunchy Oat Crusts</title>
+  <meta name="description" content="Crunchy oat crusts—naturally sweet, simple ingredients, perfect with yogurt. Text to order (202) 569-6873." />
 
-  <!-- Classic bakery-style fonts -->
+  <!-- Simple, elegant fonts (safe defaults + Google fallback) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* bakery / airy palette */
-      --pink:#f7d9df;
-      --pink2:#fbe9ee;
-      --cream:#fbf7f2;
-      --ink:#2a2623;
-      --muted:#6f665f;
-      --line:rgba(42,38,35,.14);
-
-      --btn:#d96a7a;       /* classic rose button */
-      --btnHover:#c75869;
-      --max:1180px;
+      /* Soft earthy palette */
+      --pink: #f6e6e8;      /* pale pink */
+      --beige: #f5efe7;     /* warm beige */
+      --sage: #cfe1d6;      /* light green */
+      --sky:  #d7e6f5;      /* pale blue */
+      --ink:  #2f2a27;      /* warm dark */
+      --muted:#6a5f5a;
+      --white:#ffffff;
+      --line: rgba(47,42,39,.12);
+      --shadow: 0 18px 40px rgba(47,42,39,.10);
+      --radius: 18px;
+      --radius2: 28px;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0}
+    html,body{height:100%}
     body{
+      margin:0;
       color:var(--ink);
-      background:var(--cream);
-      font-family:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.6;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 0%, rgba(246,230,232,.85), transparent 55%),
+        radial-gradient(900px 500px at 85% 10%, rgba(215,230,245,.75), transparent 55%),
+        radial-gradient(900px 500px at 35% 95%, rgba(207,225,214,.70), transparent 55%),
+        linear-gradient(180deg, var(--beige), #fbfaf7 45%, #ffffff 100%);
     }
 
-    /* top bar */
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 22px}
+
+    /* Top bar */
     .topbar{
-      background:var(--pink2);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:rgba(251,250,247,.70);
       border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background:linear-gradient(135deg, #e9b9c0, #cfe1d6);
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+    }
+    .brand strong{
+      font-family: Fraunces, Georgia, serif;
+      font-weight:600;
+      letter-spacing:.2px;
+      font-size:18px;
+    }
+    .nav{
+      display:flex; gap:18px; align-items:center;
       font-size:13px;
-      color:rgba(42,38,35,.70);
+      color:var(--muted);
     }
-    .topbar .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:10px 16px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .topbar a{color:inherit; text-decoration:underline; text-underline-offset:3px}
-
-    /* header */
-    header{
-      background:var(--pink2);
-      border-bottom:1px solid var(--line);
-    }
-    .headerWrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:18px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-
-    .logo{
-      display:flex;
-      align-items:baseline;
-      gap:10px;
+    .nav a{
       text-decoration:none;
-      color:var(--ink);
+      padding:8px 10px;
+      border-radius:999px;
+      transition:background .2s ease;
+    }
+    .nav a:hover{background:rgba(47,42,39,.06)}
+
+    .cta-small{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(47,42,39,.90);
+      color:white;
+      font-size:13px;
+      border:1px solid rgba(47,42,39,.25);
+      box-shadow: 0 10px 25px rgba(47,42,39,.16);
       white-space:nowrap;
     }
-    .logoMark{
-      width:12px; height:12px; border-radius:50%;
-      background:var(--btn);
-      display:inline-block;
-    }
-    .logoName{
-      font-family:"Playfair Display", serif;
-      font-weight:700;
-      font-size:22px;
-      letter-spacing:.2px;
-    }
-    .logoTag{
-      font-size:12px;
-      color:rgba(42,38,35,.62);
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      margin-top:2px;
-    }
 
-    nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    nav a{
-      font-size:13px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      text-decoration:none;
-      color:rgba(42,38,35,.78);
-      padding:6px 0;
-      border-bottom:1px solid transparent;
-    }
-    nav a:hover{border-bottom-color:rgba(42,38,35,.26)}
-    .iconLink{
-      font-size:18px;
-      text-transform:none;
-      letter-spacing:0;
-      border-bottom:none !important;
-      opacity:.75;
-    }
-
-    /* hero banner */
+    /* Hero */
     .hero{
-      position:relative;
-      max-width:var(--max);
-      margin:0 auto;
-      padding:18px 16px 0;
+      padding:40px 0 20px;
     }
-    .heroBanner{
-      position:relative;
-      border:1px solid var(--line);
-      background:#fff;
-      overflow:hidden;
-      height:420px;
-    }
-    .heroBanner img{
-      width:100%; height:100%;
-      object-fit:cover;
-      display:block;
-      filter:saturate(1.03) contrast(1.02);
-    }
-    /* soft overlay like real bakery sites */
-    .heroOverlay{
-      position:absolute; inset:0;
-      background:linear-gradient(90deg, rgba(251,247,242,.88) 0%, rgba(251,247,242,.62) 42%, rgba(251,247,242,.15) 72%, rgba(251,247,242,0) 100%);
-    }
-    .heroText{
-      position:absolute;
-      left:46px;
-      top:50%;
-      transform:translateY(-50%);
-      max-width:520px;
-      padding-right:14px;
-    }
-    .heroText h1{
-      font-family:"Playfair Display", serif;
-      font-weight:700;
-      font-size:56px;
-      line-height:1.05;
-      margin:0 0 14px;
-      color:var(--btn);
-    }
-    .heroText p{
-      margin:0 0 18px;
-      color:rgba(42,38,35,.78);
-      font-size:16px;
-    }
-
-    .btnRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
-    .btn{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:999px;
-      background:var(--btn);
-      color:white;
-      text-decoration:none;
-      font-weight:600;
-      letter-spacing:.02em;
-    }
-    .btn:hover{background:var(--btnHover)}
-    .btnGhost{
-      background:transparent;
-      color:rgba(42,38,35,.82);
-      border:1px solid rgba(42,38,35,.22);
-    }
-    .btnGhost:hover{background:rgba(255,255,255,.55)}
-    .smallNote{font-size:13px; color:rgba(42,38,35,.62)}
-
-    /* main content */
-    main{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:32px 16px 60px;
-    }
-
-    .section{
-      padding:34px 0;
-      border-top:1px solid var(--line);
-    }
-
-    .grid2{
+    .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:34px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .kicker .pill{
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.55);
+    }
+
+    h1{
+      font-family: Fraunces, Georgia, serif;
+      font-weight:600;
+      font-size:54px;
+      line-height:1.02;
+      margin:12px 0 12px;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      margin:0 0 18px;
+      max-width:50ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 14px 30px rgba(47,42,39,.10);
+      font-weight:500;
+      transition:transform .15s ease, background .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.88)}
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(233,185,192,.95), rgba(207,225,214,.88));
+      border:1px solid rgba(47,42,39,.16);
+    }
+    .btn.primary:hover{background:linear-gradient(135deg, rgba(233,185,192,1), rgba(207,225,214,.95))}
+    .hint{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    /* Hero image */
+    .hero-photo{
+      position:relative;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.8);
+      min-height: 440px;
+      background:
+        linear-gradient(135deg, rgba(246,230,232,.55), rgba(215,230,245,.35)),
+        url('crust1.jpg') center/cover no-repeat;
+    }
+    .hero-photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.00) 40%, rgba(0,0,0,.30));
+      pointer-events:none;
+    }
+    .photo-tag{
+      position:absolute; left:18px; bottom:16px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(255,255,255,.9);
+      padding:10px 12px;
+      border-radius:14px;
+      max-width: 80%;
+      z-index:2;
+      backdrop-filter: blur(10px);
+    }
+    .photo-tag strong{
+      display:block;
+      font-family: Fraunces, Georgia, serif;
+      font-weight:600;
+      font-size:16px;
+      margin-bottom:4px;
+    }
+    .photo-tag span{color:var(--muted); font-size:13px; line-height:1.35}
+
+    /* Flow sections (not boxes everywhere) */
+    .section{
+      padding:36px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .section-head h2{
+      font-family: Fraunces, Georgia, serif;
+      font-size:26px;
+      margin:0;
+      letter-spacing:-.01em;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:60ch;
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:22px;
       align-items:start;
     }
 
-    .title{
-      font-family:"Playfair Display", serif;
-      font-size:34px;
-      margin:0 0 12px;
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      color:var(--muted);
+      line-height:1.7;
     }
-    .copy{color:rgba(42,38,35,.76); margin:0}
+    .list li{
+      padding:10px 0;
+      border-bottom:1px dashed rgba(47,42,39,.18);
+    }
+    .list li:last-child{border-bottom:none}
 
-    /* “miette-like” featured block */
-    .feature{
+    .ingredients{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+    .ingredients b{color:var(--ink); font-weight:500}
+
+    /* Gallery */
+    .gallery{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      align-items:center;
-      margin-top:10px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
     }
-    .feature img{
-      width:100%;
-      height:330px;
-      object-fit:cover;
-      border:1px solid var(--line);
-      background:#fff;
-      display:block;
+    .shot{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.85);
+      background:#f3f0ea;
+      min-height: 360px;
     }
-
-    .feature h3{
-      font-family:"Playfair Display", serif;
-      color:var(--btn);
-      font-size:30px;
-      margin:0 0 10px;
+    .shot.one{
+      background:url('crust2.jpg') center/cover no-repeat;
     }
-
-    ul{
-      margin:10px 0 0;
-      padding-left:18px;
-      color:rgba(42,38,35,.74);
+    .shot.two{
+      background:
+        linear-gradient(135deg, rgba(246,230,232,.65), rgba(215,230,245,.35)),
+        url('crust1.jpg') center/cover no-repeat;
+      min-height: 360px;
     }
 
-    .orderBar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:14px;
-      flex-wrap:wrap;
-      padding:18px 0 0;
-    }
-
+    /* Footer */
     footer{
-      border-top:1px solid var(--line);
-      background:var(--pink2);
-      padding:22px 16px;
-      color:rgba(42,38,35,.62);
+      padding:34px 0 46px;
+      color:rgba(47,42,39,.70);
       font-size:13px;
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.40);
+      backdrop-filter: blur(8px);
     }
-    footer .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+    .footer-inner{
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      align-items:center;
     }
 
-    /* responsive */
-    @media (max-width: 900px){
-      .heroText{left:22px; right:22px; max-width:none}
-      .heroText h1{font-size:44px}
-      .grid2{grid-template-columns:1fr}
-      .feature{grid-template-columns:1fr}
-      .feature img{height:280px}
-      .heroBanner{height:380px}
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns:1fr; }
+      .hero-photo{min-height:360px}
+      h1{font-size:44px}
+      .split{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .shot{min-height:320px}
     }
     @media (max-width: 520px){
-      .heroBanner{height:340px}
-      .heroText h1{font-size:38px}
-      nav{gap:12px}
+      h1{font-size:38px}
+      .nav{display:none}
+      .hero{padding-top:26px}
     }
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
-    <div class="wrap">
-      <div>Local pickup / delivery (by arrangement) • Loudoun area</div>
-      <div>Text to order: <a href="sms:+12025696873">(202) 569-6873</a></div>
+    <div class="container">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">
+          <span class="dot"></span>
+          <strong>Nourish &amp; Glow Co.</strong>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#enjoy">How to enjoy</a>
+          <a href="#photos">Photos</a>
+          <a href="#order">Order</a>
+        </nav>
+
+        <a class="cta-small" href="sms:+12025696873?&body=Hi!%20I%27d%20love%20to%20order%20your%20oat%20crusts.%20What%20packs%20do%20you%20have%20today%3F">
+          Text to order
+        </a>
+      </div>
     </div>
   </div>
 
-  <header>
-    <div class="headerWrap">
-      <a class="logo" href="#">
-        <span class="logoMark"></span>
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
         <div>
-          <div class="logoName">Nourish &amp; Glow</div>
-          <div class="logoTag">Oat Crusts • Local Orders</div>
+          <div class="kicker">
+            <span class="pill">Crunchy oat crusts</span>
+            <span class="pill">Local orders</span>
+            <span class="pill">No additives</span>
+          </div>
+
+          <h1>Simple, naturally sweet oat crusts.</h1>
+          <p class="sub">
+            Crunchy by design and made with simple ingredients. Fill with yogurt, add fruit or date pieces,
+            and you’ve got an easy breakfast or snack you’ll actually look forward to.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" id="order" href="sms:+12025696873?&body=Hi!%20I%27d%20like%20to%20order%20oat%20crusts.%20Do%20you%20have%20a%20pack%20of%204%20available%20today%3F">
+              Text to order (202) 569-6873
+            </a>
+            <a class="btn" href="#photos">See photos</a>
+          </div>
+
+          <div class="hint">
+            Local pickup / local delivery. Text for availability.
+          </div>
         </div>
-      </a>
 
-      <nav>
-        <a href="#menu">Menu</a>
-        <a href="#pickup">Pickup</a>
-        <a href="#delivery">Delivery</a>
-        <a href="#order">Order</a>
-        <a class="iconLink" title="Text" href="sms:+12025696873">✉︎</a>
-      </nav>
-    </div>
-  </header>
+        <div class="hero-photo" role="img" aria-label="Oat crust with yogurt and fruit">
+          <div class="photo-tag">
+            <strong>Try it with yogurt</strong>
+            <span>Top with fruit, date pieces, nut butter, or jam.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="hero">
-    <div class="heroBanner">
-      <!-- Upload hero.jpg to your repo -->
-      <img src="hero.jpg" alt="Oat crusts" />
-      <div class="heroOverlay"></div>
-
-      <div class="heroText">
-        <h1>Oat crusts that make healthy eating easy.</h1>
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>What it is</h2>
         <p>
-          Naturally sweet • Crunchy by design • Made in small batches.
-          Fill with yogurt and fruit or date pieces for an easy breakfast or snack.
+          A crisp oat “crust” you can fill like a mini bowl. It’s meant to be crunchy—not soft—so it holds up with yogurt.
         </p>
-
-        <div class="btnRow">
-          <a class="btn" href="sms:+12025696873">Text to order</a>
-          <a class="btn btnGhost" href="#menu">See details</a>
-          <span class="smallNote">No website checkout — we take orders by text.</span>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <main>
-
-    <section id="menu" class="section">
-      <div class="grid2">
-        <div>
-          <h2 class="title">Simple, clean ingredients.</h2>
-          <p class="copy">
-            Rolled oats, peanut butter, coconut oil, maple syrup, chia seeds, flax seeds, hemp seeds.
-            (Optional: cinnamon.)
-            <br><br>
-            <b>Allergen:</b> contains peanuts.
-          </p>
-
-          <div class="orderBar">
-            <div class="smallNote">Most popular: single sample • pack of 4</div>
-            <a class="btn" href="sms:+12025696873">Text (202) 569-6873</a>
-          </div>
+      <div class="split">
+        <div class="ingredients">
+          <b>Ingredients:</b> Rolled oats, peanut butter, coconut oil, maple syrup, chia seeds, flax seeds, hemp seeds.
+          <br><b>Allergens:</b> Contains peanuts.
+          <br><b>Made locally.</b> No additives.
         </div>
 
-        <div>
-          <h2 class="title">How to enjoy</h2>
-          <ul>
-            <li>Fill with yogurt + top with fruit (or date pieces)</li>
-            <li>Add nut butter, honey, or jam</li>
-            <li>Pre / post workout snack</li>
-          </ul>
-        </div>
+        <ul class="list">
+          <li><b>Best for:</b> busy mornings, snack breaks, pre/post-workout, light dessert</li>
+          <li><b>Texture:</b> crunchy &amp; sturdy (designed to hold yogurt)</li>
+          <li><b>Serving:</b> fill + top + eat — no prep needed</li>
+        </ul>
       </div>
     </section>
 
-    <section id="pickup" class="section">
-      <div class="feature">
-        <!-- Upload crust1.jpg to your repo -->
-        <img src="crust1.jpg" alt="Oat crust with fruit" />
-        <div>
-          <h3>Made locally, for local orders.</h3>
-          <p class="copy">
-            We keep it simple: you text us what you want, how many, and when you’d like pickup.
-            If delivery is possible, we’ll confirm by text.
-          </p>
-          <div class="btnRow" style="margin-top:16px">
-            <a class="btn" href="sms:+12025696873">Text to order</a>
-            <a class="btn btnGhost" href="#order">Ordering steps</a>
-          </div>
-        </div>
+    <section id="enjoy" class="section">
+      <div class="section-head">
+        <h2>How to enjoy</h2>
+        <p>Simple combos that make it feel like a treat (without being heavy).</p>
+      </div>
+
+      <div class="split">
+        <ul class="list">
+          <li>Fill with <b>yogurt</b> + top with fruit <i>(or date pieces)</i></li>
+          <li>Add <b>nut butter</b> or a spoon of <b>jam</b></li>
+          <li>Sprinkle cinnamon (optional)</li>
+        </ul>
+
+        <ul class="list">
+          <li><b>Pack options (edit anytime):</b></li>
+          <li>Single (sample)</li>
+          <li>Pack of 4 (home)</li>
+        </ul>
       </div>
     </section>
 
-    <section id="delivery" class="section">
-      <div class="grid2">
-        <div>
-          <h2 class="title">Delivery</h2>
-          <p class="copy">
-            Delivery is by arrangement (based on day + location). Text your address area and preferred time,
-            and we’ll confirm availability.
-          </p>
-        </div>
-        <div>
-          <h2 class="title">What to text</h2>
-          <ul>
-            <li>“Hi! I’d like a pack of 4 oat crusts.”</li>
-            <li>Pickup or delivery?</li>
-            <li>Your preferred day/time</li>
-          </ul>
-        </div>
+    <section id="photos" class="section">
+      <div class="section-head">
+        <h2>Photos</h2>
+        <p>
+          These are your real photos—this is what makes it look human and trustworthy.
+          (Once you upload <b>crust1.jpg</b> and <b>crust2.jpg</b>, these will show automatically.)
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="shot one" aria-label="Photo of oat crust with yogurt and fruit"></div>
+        <div class="shot two" aria-label="Photo of oat crust closeup"></div>
       </div>
     </section>
-
-    <section id="order" class="section">
-      <div class="grid2">
-        <div>
-          <h2 class="title">Order by text</h2>
-          <p class="copy">
-            Text <b>(202) 569-6873</b> and we’ll confirm price, pickup/delivery, and timing.
-            No forms, no links, no checkout.
-          </p>
-          <div class="btnRow" style="margin-top:16px">
-            <a class="btn" href="sms:+12025696873">Text (202) 569-6873</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="title">For gyms / offices</h2>
-          <p class="copy">
-            Want samples for your front desk? Text us and we’ll set up a small local drop-off batch with a simple info card.
-          </p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer>
-    <div class="wrap">
-      <div>© <span id="y"></span> Nourish &amp; Glow Co.</div>
-      <div>Local orders • Text: <a href="sms:+12025696873">(202) 569-6873</a></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div><b>Nourish &amp; Glow Co.</b> — Loudoun area</div>
+        <div>Text orders: <a href="sms:+12025696873">(202) 569-6873</a></div>
+      </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
+
