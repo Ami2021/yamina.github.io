@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SayYesToHealth | Oat Crusts</title>
-  <meta name="description" content="Crunchy oat crusts made with simple ingredients. Text to order (202) 569-6873." />
+  <title>SayYesToHealth</title>
+  <meta name="description" content="Oat crusts made with simple ingredients. Text to order (202) 569-6873." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --pink:#f8dfe4;
-      --pink2:#fbe9ec;
-      --ink:#2b2a29;
-      --muted:#6b6763;
+      --pink:#f7dfe3;
+      --pink2:#f9e8eb;
+      --ink:#2d2b2a;
+      --muted:#6f6a66;
       --accent:#e56b7b;
+      --sage:#7a9b88;
+      --sky:#7f9fb8;
       --cream:#fffdfb;
-      --sage:#cfe1d6;
-      --sky:#d7e6f5;
-      --line: rgba(43,42,41,.12);
-      --shadow: 0 18px 40px rgba(43,42,41,.12);
-      --radius: 18px;
-      --max: 1120px;
+      --max:1120px;
     }
 
     *{box-sizing:border-box}
@@ -31,321 +28,249 @@
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
-      background: var(--cream);
+      background:var(--cream);
     }
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
 
-    /* TOP HEADER (pale pink) */
-    .top{
-      background: linear-gradient(180deg, var(--pink), var(--pink2));
-      border-bottom:1px solid rgba(255,255,255,.65);
-    }
-
+    /* HEADER (flat, like the reference) */
     .topbar{
-      display:grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items:center;
-      padding:18px 0 10px;
-      gap:10px;
+      background: linear-gradient(180deg, var(--pink), var(--pink2));
+      border-bottom: 1px solid rgba(45,43,42,.10);
     }
-
-    .icons{
-      justify-self:end;
-      display:flex;
-      gap:14px;
-      align-items:center;
-      color:#57724d;
-    }
-    .icon{
-      width:18px; height:18px; display:inline-block;
-    }
-
-    .logo{
-      justify-self:center;
+    .topbar-inner{
+      padding: 20px 0 10px;
       text-align:center;
-      line-height:1;
-      padding:6px 0;
     }
-    .logo .mark{
+    .brand{
       font-family:"Playfair Display", Georgia, serif;
       font-weight:700;
-      font-size:34px;
-      letter-spacing:.02em;
-      color: var(--accent);
+      font-size:44px;
+      color:var(--accent);
+      letter-spacing:.01em;
+      line-height:1;
     }
-    .logo .sub{
-      margin-top:6px;
+    .tagline{
+      margin-top:8px;
       font-size:12px;
       letter-spacing:.18em;
       text-transform:uppercase;
-      color: rgba(43,42,41,.65);
+      color: rgba(45,43,42,.55);
     }
-
-    .nav{
+    nav{
       display:flex;
       justify-content:center;
       gap:26px;
-      padding:10px 0 16px;
+      padding: 14px 0 18px;
       font-size:12px;
       letter-spacing:.14em;
       text-transform:uppercase;
-      color: rgba(43,42,41,.65);
+      color: rgba(45,43,42,.60);
     }
-    .nav a{padding:8px 10px; border-radius:999px}
-    .nav a:hover{background:rgba(255,255,255,.45)}
+    nav a{padding:6px 0}
+    nav a:hover{color: var(--ink)}
 
-    /* HERO BANNER */
+    /* HERO IMAGE (full width, no overlay boxes) */
     .hero{
-      position:relative;
-      overflow:hidden;
+      height: 420px;
+      background: url('hero.jpg') center/cover no-repeat;
+      border-bottom: 1px solid rgba(45,43,42,.10);
+    }
+
+    /* SIMPLE CTA BAR */
+    .cta-strip{
       background:#fff;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(45,43,42,.10);
     }
-
-    .hero-banner{
-      height: 360px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,.92) 0%,
-                               rgba(255,255,255,.70) 45%,
-                               rgba(255,255,255,.00) 75%),
-        url('hero.jpg') center/cover no-repeat;
-      border-bottom:1px solid var(--line);
-    }
-
-    .hero-content{
-      position:absolute;
-      inset:0;
+    .cta-row{
       display:flex;
+      justify-content:center;
       align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color: rgba(45,43,42,.80);
     }
-
-    .hero-box{
-      max-width: 560px;
-      padding: 0 22px;
-    }
-
-    .hero h1{
-      margin:0 0 14px;
-      font-family:"Playfair Display", Georgia, serif;
-      font-weight:700;
-      font-size:58px;
-      line-height:1.02;
+    .cta-row strong{font-weight:600}
+    .cta-row .accent{
       color: var(--accent);
+      font-weight:600;
     }
-
-    .hero p{
-      margin:0 0 18px;
-      color: var(--muted);
-      font-size:15px;
-      line-height:1.65;
-      max-width: 52ch;
-    }
-
-    .btn{
+    .cta-btn{
       display:inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
       background: var(--accent);
-      color:white;
-      padding:12px 18px;
-      border-radius:999px;
+      color: #fff;
       font-size:12px;
       letter-spacing:.12em;
       text-transform:uppercase;
-      box-shadow: 0 10px 22px rgba(229,107,123,.25);
     }
-    .btn:hover{filter:brightness(.98)}
-    .btn:active{transform:translateY(1px)}
+    .cta-btn:hover{filter:brightness(.97)}
 
-    /* SECTION 2 (image left, text right) */
+    /* CONTENT SECTION like the reference (image left, text right) */
     .section{
-      padding: 56px 0;
       background:#fff;
+      padding: 54px 0 64px;
     }
-
     .grid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
-      gap: 44px;
-      align-items:center;
+      gap: 48px;
+      align-items:start;
     }
-
-    .feature-card{
-      background: #fff;
-      border: 10px solid rgba(248,223,228,.35);
-      box-shadow: var(--shadow);
-      border-radius: 6px;
-      overflow:hidden;
-    }
-
-    .feature-img{
+    .photo{
+      width:100%;
       aspect-ratio: 4 / 3;
       background: url('feature.jpg') center/cover no-repeat;
+      border: 10px solid rgba(247,223,227,.55);
     }
-
-    .copy h2{
-      margin:0 0 12px;
+    h2{
+      margin:0 0 14px;
       font-family:"Playfair Display", Georgia, serif;
       font-size:34px;
-      line-height:1.12;
+      line-height:1.15;
       color: var(--accent);
     }
-    .copy p{
+    p{
       margin:0 0 14px;
       color: var(--muted);
-      line-height:1.7;
+      line-height:1.8;
       font-size:15px;
     }
 
-    .benefits{
-      margin:18px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-    .benefits li{
+    /* subtle colored “highlights” but NOT boxes */
+    .highlights{
       display:flex;
-      align-items:flex-start;
-      gap:10px;
-      color: var(--muted);
-      line-height:1.6;
+      gap:14px;
+      flex-wrap:wrap;
+      margin: 18px 0 8px;
+      font-size:13px;
+      color: rgba(45,43,42,.75);
     }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: linear-gradient(135deg, var(--sage), var(--sky));
-      margin-top:7px;
-      flex:0 0 auto;
+    .highlights span{
+      padding-bottom:2px;
+      border-bottom: 2px solid rgba(229,107,123,.25);
     }
+    .highlights span:nth-child(2){border-bottom-color: rgba(122,155,136,.35)}
+    .highlights span:nth-child(3){border-bottom-color: rgba(127,159,184,.35)}
 
-    .orderline{
-      margin-top:18px;
-      padding-top:16px;
-      border-top:1px solid var(--line);
-      color: rgba(43,42,41,.75);
+    ul{
+      margin:16px 0 0;
+      padding-left:18px;
+      color: rgba(45,43,42,.72);
+      line-height:1.9;
       font-size:14px;
     }
-    .orderline a{
+
+    .order{
+      margin-top:22px;
+      padding-top:18px;
+      border-top: 1px solid rgba(45,43,42,.10);
+      font-size:14px;
+      color: rgba(45,43,42,.78);
+    }
+    .order a{
       color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
       font-weight:600;
-      text-decoration:underline;
-      text-underline-offset:4px;
     }
 
-    /* Footer */
     footer{
-      background: #fff;
-      border-top:1px solid var(--line);
-      padding:20px 0 34px;
-      color: rgba(43,42,41,.55);
-      font-size:13px;
+      background:#fff;
+      border-top: 1px solid rgba(45,43,42,.10);
       text-align:center;
+      padding: 22px 0 34px;
+      color: rgba(45,43,42,.55);
+      font-size:13px;
     }
 
-    @media (max-width: 920px){
-      .hero-banner{height: 380px;}
-      .hero h1{font-size:44px;}
-      .grid{grid-template-columns: 1fr; gap:26px;}
-      .topbar{grid-template-columns: 1fr auto 1fr;}
-      .nav{gap:14px; flex-wrap:wrap; padding-bottom:18px;}
+    @media (max-width: 900px){
+      .hero{height: 320px;}
+      .brand{font-size:38px;}
+      .grid{grid-template-columns:1fr; gap:26px;}
     }
   </style>
 </head>
 
 <body>
-  <header class="top">
+  <header class="topbar">
     <div class="wrap">
-      <div class="topbar">
-        <div></div>
-
-        <div class="logo">
-          <div class="mark">SayYesToHealth</div>
-          <div class="sub">oat crusts • local orders</div>
-        </div>
-
-        <div class="icons" aria-label="Account and cart">
-          <!-- simple inline icons -->
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21a8 8 0 1 0-16 0"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 6h15l-1.5 9h-12z"/>
-            <path d="M6 6l-2 0"/>
-            <circle cx="9" cy="20" r="1"/>
-            <circle cx="18" cy="20" r="1"/>
-          </svg>
-        </div>
+      <div class="topbar-inner">
+        <div class="brand">SayYesToHealth</div>
+        <div class="tagline">oat crusts • local orders</div>
       </div>
 
-      <nav class="nav">
+      <nav>
         <a href="#about">about</a>
-        <a href="#how">how to enjoy</a>
+        <a href="#enjoy">how to enjoy</a>
         <a href="#order">order</a>
         <a href="#contact">contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO (background = hero.jpg) -->
-    <section class="hero" id="about">
-      <div class="hero-banner"></div>
+  <section class="hero" aria-label="Oat crusts hero image"></section>
 
-      <div class="hero-content">
-        <div class="wrap">
-          <div class="hero-box">
-            <h1>Say yes to health.</h1>
-            <p>
-              Crunchy oat crusts made with simple ingredients—naturally sweet, satisfying,
-              and perfect with yogurt + fruit. Built for busy mornings and snack breaks.
-            </p>
-
-            <a class="btn" id="order"
-               href="sms:+12025696873?&body=Hi!%20I%E2%80%99d%20like%20to%20order%20your%20oat%20crusts.%20What%20packs%20are%20available%20today%3F">
-              text to order (202) 569-6873
-            </a>
-          </div>
-        </div>
+  <section class="cta-strip" id="order">
+    <div class="wrap">
+      <div class="cta-row">
+        <span><strong>Local pickup / local delivery</strong> (Loudoun area)</span>
+        <span class="accent">Text to order: (202) 569-6873</span>
+        <a class="cta-btn"
+           href="sms:+12025696873?&body=Hi!%20I%E2%80%99d%20like%20to%20order%20oat%20crusts.%20What%20packs%20are%20available%20today%3F">
+          text now
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECOND SECTION (left image = feature.jpg, right text like the cupcake section) -->
-    <section class="section">
-      <div class="wrap">
-        <div class="grid">
-          <div class="feature-card">
-            <div class="feature-img" role="img" aria-label="Oat crust with yogurt and fruit"></div>
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="grid">
+        <div class="photo" aria-label="Oat crust with yogurt and fruit"></div>
+
+        <div>
+          <h2>Crunchy oat crusts that make healthy eating easy.</h2>
+
+          <p>
+            Naturally sweet, filling, and crunchy by design. Fill with yogurt, top with fruit
+            (or date pieces), and you’ve got a fast breakfast or snack that actually satisfies.
+          </p>
+
+          <div class="highlights">
+            <span>No additives</span>
+            <span>Earthy + wholesome</span>
+            <span>Perfect with yogurt</span>
           </div>
 
-          <div class="copy" id="how">
-            <h2>Crunchy oat crusts that make healthy eating easy.</h2>
-            <p>
-              A crisp, sturdy oat crust you can fill like a mini bowl. Add yogurt, top with fruit
-              or date pieces, and you have a quick breakfast that feels like a treat.
-            </p>
+          <ul id="enjoy">
+            <li>Fill with yogurt + fruit (or date pieces)</li>
+            <li>Add nut butter or a drizzle of honey/maple if you want extra sweetness</li>
+            <li>Great for pre/post workout, busy mornings, or light dessert</li>
+          </ul>
 
-            <ul class="benefits">
-              <li><span class="dot"></span> Naturally sweet with simple ingredients (no additives).</li>
-              <li><span class="dot"></span> Crunchy texture that holds up with yogurt.</li>
-              <li><span class="dot"></span> Great for pre/post workout, busy mornings, or light dessert.</li>
-              <li><span class="dot"></span> Local pickup / local delivery (Loudoun area).</li>
-            </ul>
-
-            <div class="orderline" id="contact">
+          <div class="order" id="contact">
+            <div><strong>Ingredients:</strong> rolled oats, peanut butter, coconut oil, maple syrup, chia, flax, hemp, cinnamon.</div>
+            <div style="margin-top:10px;">
               To order, text <a href="sms:+12025696873">(202) 569-6873</a> with:
-              <br/>“Single sample” or “Pack of 4” + your pickup location.
+              “Single sample” or “Pack of 4” + your pickup location.
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      © <span id="y"></span> SayYesToHealth • Local orders • Text (202) 569-6873
-    </footer>
+  <footer>
+    © <span id="y"></span> SayYesToHealth • Text orders: (202) 569-6873
+  </footer>
 
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </main>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
