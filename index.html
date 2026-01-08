@@ -21,6 +21,7 @@
 --muted: #6F6A65;
 
 }
+  
 /* make sure the ribbon is not clipped */
 .topbar,
 .topbar-inner {
@@ -30,34 +31,64 @@
 .topbar-inner {
   position: relative !important;
 }
+    .love-note{
+  margin: 18px 0 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #8E857D;
+  position: relative;
+}
 
-/* ribbon */
-.ribbon {
+/* decorative lines */
+.love-note::before,
+.love-note::after{
+  content: "";
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  background: rgba(0,0,0,.15);
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+
+/* Ribbon container */
+.ribbon{
   position: absolute !important;
-  top: -18px !important;
+  top: -26px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
 
-  width: 38px !important;
-  height: 52px !important;
+  width: 48px !important;
+  height: 64px !important;
 
-  background: linear-gradient(180deg, #F4B9A7, #EFA08B) !important;
-  border-radius: 8px 8px 0 0 !important;
+  background: linear-gradient(
+    180deg,
+    #F4B4A8,
+    #EFA3B5
+  ) !important;
+
+  border-radius: 12px 12px 0 0 !important;
   clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%) !important;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,.08) !important;
-  z-index: 9999 !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,.12) !important;
+  z-index: 99999 !important;
 }
 
-.ribbon::after {
-  content: "♡" !important;
+/* Heart */
+.ribbon::after{
+  content: "♥" !important;
   position: absolute !important;
-  top: 14px !important;
+  top: 18px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  font-size: 14px !important;
-  color: rgba(255,255,255,.95) !important;
+
+  font-size: 18px !important;
+  color: #FFFFFF !important;
+  opacity: .95 !important;
 }
+
 
 
 
@@ -321,6 +352,7 @@ a:hover {
             Naturally sweet, filling, and crunchy by design. Fill with yogurt, top with fruit
             (or date pieces), and you’ve got a fast breakfast or snack that actually satisfies.
           </p>
+<p class="love-note">Made with love</p>
 
           <div class="highlights">
             <span>No additives</span>
