@@ -23,10 +23,11 @@
 }
   
 /* make sure the ribbon is not clipped */
-.topbar,
-.topbar-inner {
-  overflow: visible !important;
+.topbar-inner{
+  position:relative;
+  padding-top:52px;   /* gives space for ribbon */
 }
+
 
 .topbar-inner {
   position: relative !important;
@@ -55,10 +56,14 @@
 
 /* Ribbon container */
 .ribbon{
-  position: absolute !important;
-  top: -26px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  position:absolute;
+  top:12px;              /* was -18px */
+  left:50%;
+  transform:translateX(-50%);
+  width:38px;
+  height:52px;
+  z-index:9999;
+}
 
   width: 48px !important;
   height: 64px !important;
