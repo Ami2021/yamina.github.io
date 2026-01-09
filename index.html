@@ -22,80 +22,78 @@
 
 }
   
-/* make sure the ribbon is not clipped */
+
+
+/* Make sure the ribbon can sit above the title */
 .topbar-inner{
-  position:relative;
-  padding-top:52px;   /* gives space for ribbon */
-}
-
-
-.topbar-inner {
   position: relative !important;
-}
-    .love-note{
-  margin: 18px 0 10px;
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-size: 15px;
-  color: #8E857D;
-  position: relative;
+  overflow: visible !important;
+  padding-top: 70px !important;
 }
 
-/* decorative lines */
-.love-note::before,
-.love-note::after{
-  content: "";
-  display: inline-block;
-  width: 34px;
-  height: 1px;
-  background: rgba(0,0,0,.15);
-  vertical-align: middle;
-  margin: 0 10px;
-}
-
-
-/* Ribbon container */
+/* Ribbon tag */
 .ribbon{
-  position:absolute;
-  top:12px;              /* was -18px */
-  left:50%;
-  transform:translateX(-50%);
-  width:38px;
-  height:52px;
-  z-index:9999;
-}
+  position: absolute !important;
+  top: 14px !important;          /* moves it DOWN so it’s not cut */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 
-  width: 48px !important;
+  width: 46px !important;
   height: 64px !important;
 
-  background: linear-gradient(
-    180deg,
-    #F4B4A8,
-    #EFA3B5
-  ) !important;
-
-  border-radius: 12px 12px 0 0 !important;
+  background: linear-gradient(180deg, #F6B6BA, #F2A0A8) !important;
+  border-radius: 12px 12px 10px 10px !important;
   clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%) !important;
 
   box-shadow: 0 10px 25px rgba(0,0,0,.12) !important;
   z-index: 99999 !important;
 }
+    .love-note{
+  margin-top: 10px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #8E857D;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
 
-/* Heart */
+.love-note::before,
+.love-note::after{
+  content: "";
+  display: inline-block;
+  width: 38px;
+  height: 1px;
+  background: rgba(0,0,0,.14);
+}
+
+/* Little hole circle */
+.ribbon::before{
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 11px !important;
+  transform: translateX(-50%) !important;
+
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,.95) !important;
+}
+
+/* Heart (more obvious) */
 .ribbon::after{
   content: "♥" !important;
   position: absolute !important;
-  top: 18px !important;
   left: 50% !important;
+  top: 30px !important;
   transform: translateX(-50%) !important;
 
-  font-size: 18px !important;
-  color: #FFFFFF !important;
-  opacity: .95 !important;
+  font-size: 22px !important;          /* bigger */
+  color: rgba(255,255,255,.98) !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,.18) !important;
 }
-
-
-
 
 
 .with-love{
