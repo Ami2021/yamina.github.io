@@ -22,6 +22,33 @@
 
 }
   
+/* HERO SLIDER */
+.hero {
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 15s infinite;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
 
 
 /* Make sure the ribbon can sit above the title */
@@ -346,7 +373,14 @@ a:hover {
     </div>
   </header>
 
-  <section class="hero" aria-label="Oat crusts hero image"></section>
+  <section class="hero" aria-label="Oat crusts hero image">
+  <div class="slider">
+    <img src="images/slide1.jpg" alt="Oat crust with yogurt and fruit">
+    <img src="images/slide2.jpg" alt="Oat crust breakfast bowl">
+    <img src="images/slide3.jpg" alt="Healthy oat crust snack">
+  </div>
+</section>
+
 
   <section class="cta-strip" id="order">
     <div class="wrap">
