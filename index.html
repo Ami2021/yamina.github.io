@@ -178,39 +178,6 @@
       }
 
       /* ==========================================
-       HERO SLIDESHOW - MOBILE FIRST
-       ========================================== */
-
-      .hero {
-        height: 200px;
-        position: relative;
-        overflow: hidden;
-        background: #f3dada;
-        border-radius: 8px;
-        margin: 12px 16px;
-      }
-
-      .hero-slideshow {
-        position: relative;
-        width: 100%;
-        height: 100%;
-      }
-
-      .hero-slideshow img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out;
-      }
-
-      .hero-slideshow img.active {
-        opacity: 1;
-      }
-
-      /* ==========================================
        CTA STRIP - MOBILE FIRST
        ========================================== */
 
@@ -391,6 +358,250 @@
       }
 
       /* ==========================================
+       REVIEWS SECTION - TWO CARDS SIDE BY SIDE
+       ========================================== */
+      
+      .reviews-section {
+        background: linear-gradient(180deg, #FDF9F7 0%, #FAF6F3 100%);
+        padding: 70px 0 90px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .reviews-section h2 {
+        text-align: center;
+        font-size: clamp(28px, 5vw, 42px);
+        color: #333;
+        margin-bottom: 50px;
+        font-weight: 600;
+        font-family: "Playfair Display", Georgia, serif;
+      }
+      
+      .reviews-section h2 span {
+        color: #E8686B;
+        position: relative;
+      }
+      
+      .reviews-section h2 span::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #E8686B;
+        border-radius: 2px;
+      }
+      
+      .reviews-wrapper {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      
+      .reviews-slider {
+        overflow: hidden;
+      }
+      
+      .reviews-slide {
+        display: none;
+        gap: 30px;
+      }
+      
+      .reviews-slide.active {
+        display: flex;
+      }
+      
+      /* Show All Reviews Mode */
+      .reviews-slider.show-all .reviews-slide {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      
+      .reviews-slider.show-all .review-card {
+        flex: 0 0 calc(50% - 15px);
+        min-width: 280px;
+      }
+      
+      .reviews-wrapper.show-all .review-nav {
+        display: none;
+      }
+      
+      @media (max-width: 768px) {
+        .reviews-slider.show-all .review-card {
+          flex: 0 0 100%;
+        }
+      }
+      
+      .review-card {
+        flex: 1;
+        min-width: 0;
+        background: #fff;
+        border-radius: 20px;
+        padding: 32px 28px;
+        box-shadow: 0 4px 24px rgba(0,0,0,.06);
+      }
+      
+      .review-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      
+      .review-stars {
+        color: #F5A623;
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+      
+      .review-date {
+        font-size: 14px;
+        color: #888;
+      }
+      
+      .review-text {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 28px;
+        text-align: justify;
+      }
+      
+      .review-author-info {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      
+      .review-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #E8686B, #F5A623);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      
+      .review-author-details {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .review-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+      }
+      
+      .review-title {
+        font-size: 13px;
+        color: #888;
+      }
+      
+      /* Navigation Arrows */
+      .review-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #E8686B;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 24px;
+        color: #E8686B;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      
+      .review-nav:hover {
+        background: #E8686B;
+        color: #fff;
+      }
+      
+      .review-nav:hover svg {
+        stroke: #fff;
+      }
+      
+      .review-nav-prev {
+        left: 0;
+      }
+      
+      .review-nav-next {
+        right: 0;
+      }
+      
+      /* View All Button */
+      .reviews-footer {
+        text-align: center;
+        margin-top: 50px;
+      }
+      
+      .view-all-btn {
+        display: inline-block;
+        padding: 16px 40px;
+        background: #E8686B;
+        color: #fff;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .view-all-btn:hover {
+        background: #d55a5d;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232,104,107,.3);
+      }
+      
+      /* Decorative flowers */
+      .flower-decoration {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 250px;
+        height: 300px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40">🌸</text></svg>') no-repeat;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+      
+      /* Mobile: Stack cards */
+      @media (max-width: 768px) {
+        .reviews-slide.active {
+          flex-direction: column;
+        }
+        
+        .reviews-wrapper {
+          padding: 0 20px;
+        }
+        
+        .review-nav {
+          display: none;
+        }
+        
+        .review-card {
+          padding: 24px 20px;
+        }
+      }
+
+      /* ==========================================
        FOOTER - MOBILE FIRST
        ========================================== */
 
@@ -446,13 +657,6 @@
 
         nav a {
           padding: 8px 10px;
-        }
-
-        .hero {
-          height: 280px;
-          border-radius: 12px;
-          margin: 16px auto;
-          max-width: 1200px;
         }
 
         .cta-row {
@@ -524,12 +728,6 @@
           padding: 14px 0 18px;
         }
 
-        .hero {
-          height: 380px;
-          border-radius: 0;
-          margin: 0;
-        }
-
         .cta-strip {
           padding: 18px 0;
         }
@@ -561,14 +759,10 @@
       }
 
       /* ==========================================
-       LARGE DESKTOP (1440px+)
-       ========================================== */
+         LARGE DESKTOP (1440px+)
+         ========================================== */
 
       @media (min-width: 1440px) {
-        .hero {
-          height: 420px;
-        }
-
         .photo {
           min-height: 400px;
         }
@@ -595,17 +789,6 @@
         </div>
       </div>
     </header>
-
-    <section class="hero" aria-label="Oat crusts hero image">
-      <div class="hero-slideshow">
-        <img src="./slide1.jpg" class="active" alt="Oat crust slide 1" />
-        <img src="./slide2.jpg" alt="Oat crust slide 2" />
-        <img src="./slide3.jpg" alt="Oat crust slide 3" />
-        <img src="./slide4.jpg" alt="Oat crust slide 4" />
-        <img src="./slide5.jpg" alt="Oat crust slide 5" />
-        <img src="./slide6.jpg" alt="Oat crust slide 6" />
-      </div>
-    </section>
 
     <section class="cta-strip" id="order">
       <div class="wrap">
@@ -674,22 +857,221 @@
       </div>
     </section>
 
+    <section class="reviews-section" id="reviews">
+      <div class="wrap">
+        <h2 class="reviews-title">What people Think <span class="highlight">About Us</span></h2>
+        
+        <div class="reviews-wrapper">
+          <button class="review-nav review-nav-prev" onclick="changeReviewSlide(-1)" aria-label="Previous reviews">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          
+          <div class="reviews-slider">
+            <!-- Slide 1 -->
+            <div class="reviews-slide active" data-slide="1">
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Dec 6, 2025</span>
+                </div>
+                <p class="review-text">Really happy with these month after month. The perfect healthy breakfast solution for busy mornings!</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">LV</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Lauren de Vlaming</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Oct 31, 2025</span>
+                </div>
+                <p class="review-text">The oat crusts were birthday gifts for a friend limiting her salt and sugar intake. She loved them! Excellent customer service.</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">MM</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Maria Miller</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="reviews-slide" data-slide="2">
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Oct 17, 2025</span>
+                </div>
+                <p class="review-text">Very tasty! Filled them with yogurt and fresh fruit. It made a nice healthy dessert that everyone enjoyed.</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">MH</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Maggie Hayes</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">May 5, 2025</span>
+                </div>
+                <p class="review-text">We love these breakfast crusts! They've become a staple in our morning routine. So convenient and delicious!</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">LV</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Lauren de Vlaming</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="reviews-slide" data-slide="3">
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Mar 1, 2025</span>
+                </div>
+                <p class="review-text">These breakfast crusts are my favorite! Perfect portion size and they stay crunchy. Great healthy option.</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">LV</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Lauren de Vlaming</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Nov 2, 2024</span>
+                </div>
+                <p class="review-text">Just what I need for hectic mornings! Super delicious and nutritious. Will definitely order again!</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">D</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Doaa</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="reviews-slide" data-slide="4">
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Oct 31, 2024</span>
+                </div>
+                <p class="review-text">This is my second order because my picky kids love them for breakfast! Even they approve, which says a lot.</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">LV</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Lauren de Vlaming</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Oct 13, 2024</span>
+                </div>
+                <p class="review-text">I'm obsessed! The easiest, fastest yet most nurturing breakfast. Tried it with vanilla greek yogurt, berries and honey - amazing!</p>
+                <div class="review-author-info">
+                  <div class="review-avatar">D</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Doaa</span>
+                    <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <button class="review-nav review-nav-next" onclick="changeReviewSlide(1)" aria-label="Next reviews">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="reviews-footer">
+          <button class="view-all-btn" onclick="toggleViewAll()">View All</button>
+        </div>
+      </div>
+    </section>
+
     <footer>
       © <span id="y"></span> SayYesToHealth • Text orders: (202) 569-6873
     </footer>
 
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
-
-      // Hero slideshow
-      const slides = document.querySelectorAll(".hero-slideshow img");
-      let current = 0;
-
-      setInterval(() => {
-        slides[current].classList.remove("active");
-        current = (current + 1) % slides.length;
-        slides[current].classList.add("active");
-      }, 4000);
+      
+      // Reviews pagination
+      let currentSlide = 1;
+      const totalSlides = 4;
+      
+      function changeReviewSlide(direction) {
+        currentSlide += direction;
+        
+        if (currentSlide < 1) currentSlide = totalSlides;
+        if (currentSlide > totalSlides) currentSlide = 1;
+        
+        const allSlides = document.querySelectorAll('.reviews-slide');
+        allSlides.forEach(slide => {
+          if (parseInt(slide.dataset.slide) === currentSlide) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+      }
+      
+      // Toggle View All reviews
+      let showingAll = false;
+      
+      function toggleViewAll() {
+        const slider = document.querySelector('.reviews-slider');
+        const wrapper = document.querySelector('.reviews-wrapper');
+        const btn = document.querySelector('.view-all-btn');
+        
+        showingAll = !showingAll;
+        
+        if (showingAll) {
+          slider.classList.add('show-all');
+          wrapper.classList.add('show-all');
+          btn.textContent = 'Show Less';
+        } else {
+          slider.classList.remove('show-all');
+          wrapper.classList.remove('show-all');
+          btn.textContent = 'View All';
+          // Reset to first slide
+          currentSlide = 1;
+          const allSlides = document.querySelectorAll('.reviews-slide');
+          allSlides.forEach(slide => {
+            if (parseInt(slide.dataset.slide) === 1) {
+              slide.classList.add('active');
+            } else {
+              slide.classList.remove('active');
+            }
+          });
+        }
+      }
     </script>
   </body>
 </html>
