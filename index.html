@@ -385,6 +385,93 @@ a:hover {
       .brand{font-size:38px;}
       .grid{grid-template-columns:1fr; gap:26px;}
     }
+/* ===== MOBILE FIXES ===== */
+.topbar{
+  width: 100%;
+  background: var(--pink);
+}
+
+.topbar-inner{
+  width: 100%;
+}
+
+/* Make images never overflow */
+img{ max-width:100%; height:auto; }
+
+/* Mobile layout */
+@media (max-width: 640px){
+
+  .wrap{
+    width: 92%;
+  }
+
+  /* Header spacing + center */
+  .topbar-inner{
+    padding-top: 56px !important;
+    padding-bottom: 18px !important;
+    text-align: center;
+  }
+
+  /* Ribbon (heart tag) smaller + centered */
+  .ribbon{
+    top: 10px !important;
+    width: 34px !important;
+    height: 50px !important;
+  }
+  .ribbon::before{
+    width: 10px !important;
+    height: 10px !important;
+    top: 10px !important;
+  }
+  .ribbon::after{
+    font-size: 16px !important;
+    top: 28px !important;
+  }
+
+  /* Brand text responsive (THIS fixes the huge SayYesToHealth) */
+  .brand h1{
+    font-size: 44px !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0 !important;
+    margin: 0 !important;
+    word-break: break-word;
+  }
+  .brand p{
+    font-size: 12px !important;
+    letter-spacing: .18em !important;
+    margin-top: 10px !important;
+  }
+
+  /* Nav wraps nicely on phone */
+  nav{
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 12px 0 16px;
+  }
+  nav a{
+    font-size: 12px;
+    letter-spacing: .2em;
+  }
+
+  /* Hero slider not huge */
+  .hero{
+    height: 220px !important;
+    max-height: none !important;
+    border-radius: 12px;
+    margin-top: 14px;
+  }
+
+  /* CTA becomes stacked */
+  .cta-row{
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .cta-btn{
+    width: 100%;
+    max-width: 240px;
+  }
+}
 
 
 
