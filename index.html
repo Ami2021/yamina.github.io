@@ -22,23 +22,25 @@
 
 }
   
-/* HERO SLIDER */
+/* HERO (calm + smaller) */
 .hero{
-  height: 320px;              /* smaller */
-  max-height: 55vh;           /* prevents it from taking over */
+  height: 240px;          /* main control — smaller */
+  max-height: 40vh;       /* cap it */
   position: relative;
   overflow: hidden;
-  background: #F3DADA;        /* fallback */
-  border-radius: 14px;        /* optional: makes it prettier */
-  margin: 24px auto 0;        /* space under nav */
+  background: #F3DADA;    /* fallback */
+  border-radius: 14px;
+  margin: 16px auto 0;    /* less space above */
 }
 
-@media (max-width: 900px){
-  .hero{ height: 240px; }
+@media (max-width: 768px){
+  .hero{ height: 200px; }
 }
+
 @media (max-width: 480px){
-  .hero{ height: 200px; border-radius: 10px; }
+  .hero{ height: 170px; }
 }
+
 
 
 .slider {
