@@ -358,6 +358,295 @@
       }
 
       /* ==========================================
+       OUR PRODUCTS SECTION
+       ========================================== */
+
+      .products-section {
+        background: #fff;
+        padding: 60px 0 80px;
+        text-align: center;
+      }
+
+      .products-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(32px, 6vw, 48px);
+        color: var(--ink);
+        margin: 0 0 16px;
+        font-weight: 700;
+      }
+
+      .products-intro {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (min-width: 768px) {
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .product-card {
+        background: var(--cream);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: left;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .product-card img.contain-image {
+        object-fit: contain;
+        background: #f5f0eb;
+      }
+
+      .product-card-content {
+        padding: 24px;
+      }
+
+      .product-card h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 22px;
+        color: var(--ink);
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+
+      .product-card p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0 0 16px;
+      }
+
+      .product-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .product-highlights span {
+        background: var(--sage);
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .product-details {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .product-details strong {
+        color: var(--ink);
+      }
+
+      .product-benefits {
+        margin: 16px 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .product-benefits li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .product-benefits li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--sage);
+        font-weight: 700;
+      }
+
+      .product-great-for {
+        background: rgba(143, 175, 154, 0.1);
+        padding: 16px;
+        border-radius: 10px;
+        margin-top: 16px;
+      }
+
+      .product-great-for h4 {
+        font-size: 14px;
+        color: var(--ink);
+        margin: 0 0 10px;
+        font-weight: 600;
+      }
+
+      .product-great-for ul {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .product-ingredients {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(45, 43, 42, 0.1);
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .product-ingredients strong {
+        color: var(--ink);
+      }
+
+      /* ==========================================
+       HOW TO USE SECTION
+       ========================================== */
+
+      .how-to-use-section {
+        background: var(--cream);
+        padding: 70px 0 80px;
+      }
+
+      .how-to-use-section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(32px, 6vw, 48px);
+        color: var(--ink);
+        margin: 0 0 16px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .how-to-use-intro {
+        max-width: 700px;
+        margin: 0 auto 50px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      .how-to-use-product {
+        margin-bottom: 60px;
+      }
+
+      .how-to-use-product:last-child {
+        margin-bottom: 0;
+      }
+
+      .how-to-use-product h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 26px;
+        color: var(--accent);
+        margin: 0 0 24px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .how-to-use-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .how-to-use-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .how-to-use-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        text-align: center;
+      }
+
+      .how-to-use-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .how-to-use-card-content {
+        padding: 20px;
+      }
+
+      .how-to-use-card h4 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 18px;
+        color: var(--ink);
+        margin: 0 0 10px;
+        font-weight: 600;
+      }
+
+      .how-to-use-card p {
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .how-to-use-simple {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+        max-width: 700px;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .how-to-use-simple h4 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 20px;
+        color: var(--ink);
+        margin: 0 0 16px;
+        font-weight: 600;
+      }
+
+      .how-to-use-simple ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 15px;
+      }
+
+      .how-to-use-simple li {
+        margin-bottom: 8px;
+      }
+
+      /* ==========================================
        REVIEWS SECTION - TWO CARDS SIDE BY SIDE
        ========================================== */
 
@@ -778,7 +1067,7 @@
           <div class="ribbon" aria-hidden="true"></div>
           <div class="brand">
             <h1>SayYesToHealth</h1>
-            <p>OAT CRUSTS • LOCAL ORDERS</p>
+            <p>LOCAL ORDERS</p>
           </div>
 
           <nav>
@@ -808,49 +1097,141 @@
       </div>
     </section>
 
-    <section class="section" id="about">
+    <!-- Our Products Section -->
+    <section class="products-section" id="products">
       <div class="wrap">
-        <div class="grid">
-          <div class="photo">
-            <img src="oat-crust.jpg" alt="Oat crust with yogurt and fruit" />
+        <h2>Our Products</h2>
+        <p class="products-intro">
+          Wholesome, homemade baked goods crafted with real ingredients. No refined sugar, no artificial additives—just pure, nourishing goodness made from scratch.
+        </p>
+
+        <div class="products-grid">
+          <!-- Date Cake -->
+          <div class="product-card">
+            <img src="images/cake.png" alt="Freshly baked date cake with walnuts" />
+            <div class="product-card-content">
+              <h3>Date Cake</h3>
+              <p>
+                Freshly baked date cake made with real dates as the only sweetener, whole wheat flour and coconut oil. No refined sugar, no syrup, no artificial ingredients and no bleached flour.
+              </p>
+              
+              <div class="product-highlights">
+                <span>No Refined Sugar</span>
+                <span>Whole Wheat</span>
+                <span>Natural</span>
+              </div>
+
+              <p class="product-details">
+                Dates provide natural energy, fiber, and essential minerals, making this cake a nourishing option for people who want something sweet while still supporting their health.
+              </p>
+
+              <div class="product-details">
+                <strong>Why it's a healthy choice:</strong>
+                <ul class="product-benefits">
+                  <li>Naturally sweetened with dates only</li>
+                  <li>Source of fiber for digestion</li>
+                  <li>Contains potassium to support muscle function</li>
+                  <li>No refined sugar, no preservatives</li>
+                </ul>
+              </div>
+
+              <div class="product-great-for">
+                <h4>💪🏻 Great for:</h4>
+                <ul>
+                  <li>Active lifestyle & workouts</li>
+                  <li>Seniors looking for gentle, nourishing food</li>
+                  <li>Anyone reducing refined sugar</li>
+                  <li>Breakfast, snacks, or light dessert</li>
+                </ul>
+              </div>
+
+              <p class="product-ingredients">
+                <strong>Ingredients:</strong> dates, whole wheat, milk and coconut oil.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h2>Crunchy oat crusts that make healthy eating easy.</h2>
-            <p class="with-love">Made with love</p>
+          <!-- Organic Oat Crust -->
+          <div class="product-card">
+            <img src="images/oat-crust.png" alt="Homemade Organic Oat Crust beautifully packaged" class="contain-image" />
+            <div class="product-card-content">
+              <h3>Organic Oat Crust</h3>
+              <p>
+                Handcrafted crunchy oat crusts that make healthy eating effortless. Naturally sweet, wonderfully filling, and perfectly crunchy by design—each one baked with care in small batches.
+              </p>
+              
+              <div class="product-highlights">
+                <span>No Additives</span>
+                <span>Earthy + Wholesome</span>
+                <span>Homemade</span>
+              </div>
 
-            <p>
-              Naturally sweet, filling, and crunchy by design. Fill with yogurt,
-              top with fruit (or date pieces), and you've got a fast breakfast
-              or snack that actually satisfies.
-            </p>
+              <p class="product-details">
+                Fill with creamy yogurt, top with fresh fruit or date pieces, and you've got a fast, satisfying breakfast or snack that nourishes your body and delights your taste buds.
+              </p>
 
-            <div class="highlights">
-              <span>No additives</span>
-              <span>Earthy + wholesome</span>
-              <span>Perfect with yogurt</span>
+              <div class="product-details">
+                <strong>How to enjoy:</strong>
+                <ul class="product-benefits">
+                  <li>Fill with yogurt + fresh fruit or date pieces</li>
+                  <li>Add nut butter or a drizzle of honey/maple for extra sweetness</li>
+                  <li>Perfect with Greek yogurt and berries</li>
+                  <li>Great as a grab-and-go healthy snack</li>
+                </ul>
+              </div>
+
+              <div class="product-great-for">
+                <h4>💪🏻 Great for:</h4>
+                <ul>
+                  <li>Pre/post workout fuel</li>
+                  <li>Busy mornings on-the-go</li>
+                  <li>Light, guilt-free dessert</li>
+                  <li>Kids' lunchboxes & healthy snacking</li>
+                </ul>
+              </div>
+
+              <p class="product-ingredients">
+                <strong>Ingredients:</strong> organic rolled oats, peanut butter, coconut oil, maple syrup, chia seeds, flaxseed, hemp hearts, cinnamon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section class="how-to-use-section" id="how-to-use">
+      <div class="wrap">
+        <h2>How to Enjoy</h2>
+        <p class="how-to-use-intro">
+          Simple, delicious ways to make the most of our homemade treats. Perfect for any time of day!
+        </p>
+
+        <!-- Organic Oat Crust -->
+        <div class="how-to-use-product">
+          <h3>🥣 Organic Oat Crust</h3>
+          <div class="how-to-use-grid">
+            <div class="how-to-use-card">
+              <img src="images/crust1.png" alt="Oat crust with yogurt and fresh berries" />
+              <div class="how-to-use-card-content">
+                <h4>Breakfast Crust Cup</h4>
+                <p>Fill with creamy Greek yogurt, layer with fresh berries, and drizzle with a touch of honey for a wholesome breakfast or snack.</p>
+              </div>
             </div>
 
-            <ul id="enjoy">
-              <li>Fill with yogurt + fruit (or date pieces)</li>
-              <li>
-                Add nut butter or a drizzle of honey/maple if you want extra
-                sweetness
-              </li>
-              <li>
-                Great for pre/post workout, busy mornings, or light dessert
-              </li>
-            </ul>
-
-            <div class="order" id="contact">
-              <div>
-                <strong>Ingredients:</strong> rolled oats, peanut butter,
-                coconut oil, maple syrup, chia, flax, hemp, cinnamon.
+            <div class="how-to-use-card">
+              <img src="images/crust2.png" alt="Oat crust with nut butter and banana" />
+              <div class="how-to-use-card-content">
+                <h4>Nut Butter Delight</h4>
+                <p>Spread your favorite nut butter inside, add sliced bananas or date pieces, and enjoy a protein-packed energy boost.</p>
               </div>
-              <div>
-                To order, text
-                <a href="sms:+12025696873">(202) 569-6873</a> with: "Single
-                sample" or "Pack of 4" + your pickup location.
+            </div>
+
+            <div class="how-to-use-card">
+              <img src="images/crust3.png" alt="Oat crust as a light dessert" />
+              <div class="how-to-use-card-content">
+                <h4>Light Dessert Treat</h4>
+                <p>Top with a dollop of coconut cream, fresh fruit, and a sprinkle of cinnamon for a guilt-free dessert everyone will love.</p>
               </div>
             </div>
           </div>
@@ -1036,6 +1417,43 @@
                   <div class="review-author-details">
                     <span class="review-name">Doaa</span>
                     <span class="review-title">Verified Customer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 - Date Cake Reviews -->
+            <div class="reviews-slide" data-slide="5">
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Jan 6, 2026</span>
+                </div>
+                <p class="review-text">
+                  He loves it! He was super annoyed when he read "date cake" saying it's my bday tomorrow and you are spoiling it by not letting me indulge. Then he unwrapped it, smelled it and took a chunk and another!
+                </p>
+                <div class="review-author-info">
+                  <div class="review-avatar">❤️</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Happy Customer</span>
+                    <span class="review-title">Date Cake Fan</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="review-card-header">
+                  <span class="review-stars">★★★★★</span>
+                  <span class="review-date">Jan 6, 2026</span>
+                </div>
+                <p class="review-text">
+                  I gave a piece to my husband and he liked it so much that he ate a big piece this morning. He just texted that it is delicious!
+                </p>
+                <div class="review-author-info">
+                  <div class="review-avatar">❤️</div>
+                  <div class="review-author-details">
+                    <span class="review-name">Happy Customer</span>
+                    <span class="review-title">Date Cake Fan</span>
                   </div>
                 </div>
               </div>
