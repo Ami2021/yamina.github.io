@@ -526,6 +526,28 @@
         color: var(--ink);
       }
 
+      .product-disclaimer {
+        margin-top: 16px;
+        padding: 12px 16px;
+        background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+        border: 1px solid #f0d78c;
+        border-left: 4px solid #d4a000;
+        border-radius: 6px;
+        font-size: 11px;
+        color: #856404;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .product-disclaimer::before {
+        content: "\26A0";
+        font-size: 14px;
+      }
+
       /* ==========================================
        HOW TO USE SECTION
        ========================================== */
@@ -1102,19 +1124,26 @@
       <div class="wrap">
         <h2>Our Products</h2>
         <p class="products-intro">
-          Wholesome, homemade baked goods crafted with real ingredients. No refined sugar, no artificial additives—just pure, nourishing goodness made from scratch.
+          Wholesome, homemade baked goods crafted with real ingredients. No
+          refined sugar, no artificial additives—just pure, nourishing goodness
+          made from scratch.
         </p>
 
         <div class="products-grid">
           <!-- Date Cake -->
           <div class="product-card">
-            <img src="images/cake.png" alt="Freshly baked date cake with walnuts" />
+            <img
+              src="images/cake.png"
+              alt="Freshly baked date cake with walnuts"
+            />
             <div class="product-card-content">
               <h3>Date Cake</h3>
               <p>
-                Freshly baked date cake made with real dates as the only sweetener, whole wheat flour and coconut oil. No refined sugar, no syrup, no artificial ingredients and no bleached flour.
+                Freshly baked date cake made with real dates as the only
+                sweetener, whole wheat flour and coconut oil. No refined sugar,
+                no syrup, no artificial ingredients and no bleached flour.
               </p>
-              
+
               <div class="product-highlights">
                 <span>No Refined Sugar</span>
                 <span>Whole Wheat</span>
@@ -1122,7 +1151,9 @@
               </div>
 
               <p class="product-details">
-                Dates provide natural energy, fiber, and essential minerals, making this cake a nourishing option for people who want something sweet while still supporting their health.
+                Dates provide natural energy, fiber, and essential minerals,
+                making this cake a nourishing option for people who want
+                something sweet while still supporting their health.
               </p>
 
               <div class="product-details">
@@ -1146,20 +1177,30 @@
               </div>
 
               <p class="product-ingredients">
-                <strong>Ingredients:</strong> dates, whole wheat, milk and coconut oil.
+                <strong>Ingredients:</strong> dates, whole wheat, milk,
+                coconut oil, baking soda and baking powder.
               </p>
+              <div class="product-disclaimer">
+                Processed and prepared without state inspection
+              </div>
             </div>
           </div>
 
           <!-- Organic Oat Crust -->
           <div class="product-card">
-            <img src="images/oat-crust.png" alt="Homemade Organic Oat Crust beautifully packaged" class="contain-image" />
+            <img
+              src="images/oat-crust.png"
+              alt="Homemade Organic Oat Crust beautifully packaged"
+              class="contain-image"
+            />
             <div class="product-card-content">
               <h3>Organic Oat Crust</h3>
               <p>
-                Handcrafted crunchy oat crusts that make healthy eating effortless. Naturally sweet, wonderfully filling, and perfectly crunchy by design—each one baked with care in small batches.
+                Handcrafted crunchy oat crusts that make healthy eating
+                effortless. Naturally sweet, wonderfully filling, and perfectly
+                crunchy by design—each one baked with care in small batches.
               </p>
-              
+
               <div class="product-highlights">
                 <span>No Additives</span>
                 <span>Earthy + Wholesome</span>
@@ -1167,14 +1208,19 @@
               </div>
 
               <p class="product-details">
-                Fill with creamy yogurt, top with fresh fruit or date pieces, and you've got a fast, satisfying breakfast or snack that nourishes your body and delights your taste buds.
+                Fill with creamy yogurt, top with fresh fruit or date pieces,
+                and you've got a fast, satisfying breakfast or snack that
+                nourishes your body and delights your taste buds.
               </p>
 
               <div class="product-details">
                 <strong>How to enjoy:</strong>
                 <ul class="product-benefits">
                   <li>Fill with yogurt + fresh fruit or date pieces</li>
-                  <li>Add nut butter or a drizzle of honey/maple for extra sweetness</li>
+                  <li>
+                    Add nut butter or a drizzle of honey/maple for extra
+                    sweetness
+                  </li>
                   <li>Perfect with Greek yogurt and berries</li>
                   <li>Great as a grab-and-go healthy snack</li>
                 </ul>
@@ -1191,8 +1237,13 @@
               </div>
 
               <p class="product-ingredients">
-                <strong>Ingredients:</strong> organic rolled oats, peanut butter, coconut oil, maple syrup, chia seeds, flaxseed, hemp hearts, cinnamon.
+                <strong>Ingredients:</strong> organic rolled oats, peanut
+                butter, coconut oil, maple syrup, chia seeds, flaxseed, hemp
+                hearts, cinnamon.
               </p>
+              <div class="product-disclaimer">
+                Processed and prepared without state inspection
+              </div>
             </div>
           </div>
         </div>
@@ -1204,7 +1255,8 @@
       <div class="wrap">
         <h2>How to Enjoy</h2>
         <p class="how-to-use-intro">
-          Simple, delicious ways to make the most of our homemade treats. Perfect for any time of day!
+          Simple, delicious ways to make the most of our homemade treats.
+          Perfect for any time of day!
         </p>
 
         <!-- Organic Oat Crust -->
@@ -1212,18 +1264,31 @@
           <h3>🥣 Organic Oat Crust</h3>
           <div class="how-to-use-grid">
             <div class="how-to-use-card">
-              <img src="images/crust1.png" alt="Oat crust with yogurt and fresh berries" />
+              <img
+                src="images/crust1.png"
+                alt="Oat crust with yogurt and fresh berries"
+              />
               <div class="how-to-use-card-content">
                 <h4>Breakfast Crust Cup</h4>
-                <p>Fill with creamy Greek yogurt, layer with fresh berries, and drizzle with a touch of honey for a wholesome breakfast or snack.</p>
+                <p>
+                  Fill with creamy Greek yogurt, layer with fresh berries, and
+                  drizzle with a touch of honey for a wholesome breakfast or
+                  snack.
+                </p>
               </div>
             </div>
 
             <div class="how-to-use-card">
-              <img src="images/crust2.png" alt="Oat crust with nut butter and banana" />
+              <img
+                src="images/crust2.png"
+                alt="Oat crust with nut butter and banana"
+              />
               <div class="how-to-use-card-content">
                 <h4>Nut Butter Delight</h4>
-                <p>Spread your favorite nut butter inside, add sliced bananas or date pieces, and enjoy a protein-packed energy boost.</p>
+                <p>
+                  Spread your favorite nut butter inside, add sliced bananas or
+                  date pieces, and enjoy a protein-packed energy boost.
+                </p>
               </div>
             </div>
 
@@ -1231,7 +1296,11 @@
               <img src="images/crust3.png" alt="Oat crust as a light dessert" />
               <div class="how-to-use-card-content">
                 <h4>Light Dessert Treat</h4>
-                <p>Top with a dollop of coconut cream, fresh fruit, and a sprinkle of cinnamon for a guilt-free dessert everyone will love.</p>
+                <p>
+                  Top with a dollop of coconut cream, fresh fruit, and a
+                  sprinkle of cinnamon for a guilt-free dessert everyone will
+                  love.
+                </p>
               </div>
             </div>
           </div>
@@ -1430,7 +1499,10 @@
                   <span class="review-date">Jan 6, 2026</span>
                 </div>
                 <p class="review-text">
-                  He loves it! He was super annoyed when he read "date cake" saying it's my bday tomorrow and you are spoiling it by not letting me indulge. Then he unwrapped it, smelled it and took a chunk and another!
+                  He loves it! He was super annoyed when he read "date cake"
+                  saying it's my bday tomorrow and you are spoiling it by not
+                  letting me indulge. Then he unwrapped it, smelled it and took
+                  a chunk and another!
                 </p>
                 <div class="review-author-info">
                   <div class="review-avatar">S</div>
@@ -1447,7 +1519,9 @@
                   <span class="review-date">Jan 6, 2026</span>
                 </div>
                 <p class="review-text">
-                  I gave a piece to my husband and he liked it so much that he ate a big piece this morning. He just texted that it is delicious!
+                  I gave a piece to my husband and he liked it so much that he
+                  ate a big piece this morning. He just texted that it is
+                  delicious!
                 </p>
                 <div class="review-author-info">
                   <div class="review-avatar">N</div>
